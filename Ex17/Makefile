@@ -1,7 +1,28 @@
-CFLAGS=-Wall -g
-CC = "C:\MinGW\bin\gcc.exe"
+CC = gcc
+CFLAGS = -Wall -Wextra
+TARGET = ex17.exe
+SRC = ex17.c
+
+.PHONY: all clean test
 
 all: ex17
 
+$(TARGET): $(SRC)
+	$(CC) $(CFLAGS) $^ -o $@
+
+%.exe: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-	del -f ex17.exe
+	del $(TARGET)
+
+test: $(TARGET)
+	./$(TARGET) db.dat c
+	./$(TARGET) db.dat s 1 tHIago thiago@com
+	./$(TARGET) db.dat s 2 MARIA MARIA@COM
+	./$(TARGET) db.dat s 3 thiagooos thhh@com
+	./$(TARGET) db.dat g 1
+	./$(TARGET) db.dat g 2
+	./$(TARGET) db.dat l
+	./$(TARGET) db.dat n thiago
+	./$(TARGET) db.dat e thiago

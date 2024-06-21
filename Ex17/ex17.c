@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <string.h>
+#include <ctype.h>
 
 /*#define MAX_DATA 512
 #define MAX_ROWS 100*/
@@ -41,6 +42,8 @@ void Address_print(struct Address *addr);
 void Database_get(struct Connection *conn, int id);
 void Database_delete(struct Connection *conn, int id);
 void Database_list(struct Connection *conn);
+void Database_findByName(struct Connection *conn, char *name);
+void Database_findByEmail(struct Connection *conn, char *email);
 
 
 void Database_close(struct Connection *conn){
@@ -66,7 +69,6 @@ void die(struct Connection *conn, const char* message){
     Database_close(conn);
     exit(1);
 }
-
 
 void Database_create(struct Connection *conn, int MAX_DATA, int MAX_ROWS){
 
@@ -212,7 +214,6 @@ void Address_print(struct Address *addr){
     printf("%d %s %s\n", addr->id, addr->name, addr->email);
 }
 
-
 void Database_get(struct Connection *conn, int id){
     struct Address *addr = &conn->db->rows[id];
 
@@ -238,6 +239,40 @@ void Database_list(struct Connection *conn){
         struct Address *cur = &db->rows[i];
 
         if(cur->set){
+            Address_print(cur);
+        }
+    }
+}
+
+void *lowerString(char *string){
+    int i = 0;
+
+    while(string[i]){
+        string[i] = tolower((unsigned char)string[i]);
+        i++;
+    }
+    return string;
+}
+
+void Database_findByName(struct Connection *conn, char *name){
+    struct Database *db = conn->db;
+
+    for(int i = 0; i < db->MAX_ROWS; i++){
+        struct Address *cur = &db->rows[i];
+
+        if(cur->set && (strstr(lowerString(cur->name), lowerString(name)))){
+            Address_print(cur);
+        }
+    }
+}
+
+void Database_findByEmail(struct Connection *conn, char *email){
+    struct Database *db = conn->db;
+
+     for(int i = 0; i < db->MAX_ROWS; i++){
+        struct Address *cur = &db->rows[i];
+
+        if(cur->set && (strstr(lowerString(cur->email), lowerString(email)))){
             Address_print(cur);
         }
     }
@@ -305,10 +340,20 @@ int main(int argc, char* argv[]){
         Database_list(conn);
         break;
 
-    /*case 'f':
-        Database_find(conn);
+    case 'n':
+        if(argc != 4){
+            die(conn, "Need only name");
+        }
+        Database_findByName(conn, argv[3]);
         break;
-    */
+    
+    case 'e':
+        if(argc != 4){
+            die(conn, "Need only email");
+        }
+        Database_findByEmail(conn, argv[3]);
+        break;
+    
     default:
         die(conn, "Invalid action: c=create, g=get, s=set, l=list, d=del, f=find");
     }
