@@ -29,7 +29,7 @@ int strangeOrder(int a, int b);
 int main (int argc, char* argv[]){
     if(argc < 4){
         printf("Supported sortType:\n b = bubbleSort\n q = quickSort\n");
-        printf("Supported sortOrder:\n s = sorted\n r = reversed\nt=strange\n");
+        printf("Supported sortOrder:\n s = sorted\n r = reversed\n t=strange\n");
         die("USAGE: ex18 <sortType> <sortOrder> 4 3 1 5 6");
     }
 
@@ -85,7 +85,7 @@ void testSorting(int *numbers, int count, char sortType, char sortOrder){
     //Switch for each Sort Algoritm, default is Bubble Sorting
     switch (sortType)
     {
-    case 'c':
+    case 'b':
         printf("Bubble Sorting\n");
         sorted = bubbleSorting(numbers, count, cmp);
         break;
