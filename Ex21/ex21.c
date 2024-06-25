@@ -59,7 +59,7 @@ int main (){
     printf("INT_LEAST8_MIN: %d\n", sizeof(INT_LEAST8_MIN));
     printf("UINT_LEAST64_MAX: %d\n", sizeof(UINT_LEAST64_MAX));
     printf("int_fast16_t: %d\n", sizeof(int_fast16_t));
-    printf("uint_fast16_t: %d\n", sizeof(uint_fast16_t));
+    printf("uint_fast16_t: %d\n", sizeof(uint_fast16_t));   
     printf("INT_FAST8_MAX: %d\n", sizeof(INT_FAST8_MAX));
     printf("UINT_FAST64_MAX: %d\n", sizeof(UINT_FAST64_MAX));
     printf("intptr_t: %d\n", sizeof(intptr_t));
