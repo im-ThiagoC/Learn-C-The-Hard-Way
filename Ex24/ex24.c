@@ -21,24 +21,66 @@ typedef struct Person {
     float income;
 } Person;
 
+void removeSpaces(char *string){
+    char *temp = string;
+
+    while (*temp != '\0'){
+        if(*temp != ' '){
+            *string = *temp;
+            string++;
+        }
+
+        temp++;
+    }
+
+    *string = '\0';
+}
+
+void getNameCharByChar(char *string){
+    char c = 'a';
+    int i = 0;
+
+    while(c != '\n'){
+        scanf("%c", &c);
+        string[i] = c;
+        i++;
+
+        if(i > MAX_DATA){
+            break;
+        }
+    }
+    string[i] = '\0';
+
+}
+
 int main (){
     Person you = {.age = 0};
     int i = 0;
     char *in = NULL;
 
     printf("What's your first name? ");
-    in = fgets(you.first_name, MAX_DATA - 1, stdin);
+    //scanf("%s", you.first_name);
+    //in = fgets(you.first_name, MAX_DATA, stdin);
+    getNameCharByChar(you.first_name);
+    in = you.first_name;
     check(in != NULL, "Failed to read first name...");
+    removeSpaces(you.first_name);
 
     printf("What's your last name? ");
-    in = fgets(you.last_name, MAX_DATA - 1, stdin);
+    //scanf("%99[a-zA-Z ]", you.last_name);
+    //getchar();
+    fgets(you.last_name, MAX_DATA, stdin);
     check(in != NULL, "Failed to read last name");
+    removeSpaces(you.last_name);
 
     printf("How old are you? ");
     char temp[MAX_DATA];
-    fgets(temp, MAX_DATA - 1, stdin);
+    //fgets(temp, MAX_DATA - 1, stdin);
+    scanf("%s", temp);
+    getchar();
     you.age = atoi(temp);
-    check(you.age > 0, "You have to enter a number.");
+    log_info("%d", you.age);
+    check(you.age > 0, "You have to enter a number in your age.");
 
     printf("What color are your eyes:\n");
     for(i = 0; i < OTHER_EYES; i++){
@@ -50,7 +92,7 @@ int main (){
     fgets(temp, MAX_DATA - 1, stdin);
     eyes = atoi(temp);
     you.eyes = eyes - 1;
-    check(eyes > 0, "You have to enter a number.");
+    check(eyes > 0, "You have to enter a number of these options.");
     check(you.eyes <= OTHER_EYES && you.eyes >= 0, "Do it right, that's not an option.");
 
 
