@@ -34,6 +34,7 @@ void removeSpaces(char *string){
     }
 
     *string = '\0';
+    free(temp);
 }
 
 void getNameCharByChar(char *string){
