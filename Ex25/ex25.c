@@ -5,6 +5,116 @@
 
 #define MAX_DATA 100
 
+/*Extra Credits*/
+//Função para imprimir uma string
+int print_string(char **out_string){
+    int rc = 0;
+    rc = fputs(*out_string, stdout);
+    check(rc == 0, "Failed to print string");
+
+    return 0;
+    error:
+        return 1;
+}
+
+// Função para imprimir um caractere
+int print_char(char c) {
+    int rc = 0;
+    rc = putchar(c);
+    check(rc == 0, "Failed to print a char");
+
+    return 0;
+    error:
+        return 1;
+}
+
+// Função para converter e imprimir um número inteiro
+int print_int(int *num) {
+    // Verifica se o número é negativo
+    if (*num < 0) {
+        print_char('-');
+        *num = -*num;
+    }
+
+    // Calcula o número de dígitos no número
+    int divisor = 1;
+    while (*num / divisor >= 10) {
+        divisor *= 10;
+    }
+
+    // Imprime cada dígito do número
+    while (divisor > 0) {
+        int digit = *num / divisor;
+        //Imprimo primeiro a maior casa, Ex: 987 -> 9 -> 98 -> 987
+        print_char(digit + '0');
+        *num %= divisor;
+        divisor /= 10;
+    }
+
+    return 0;
+}
+
+int new_printf(const char *fmt, ...){
+    int i = 0;
+    int rc = 0;
+
+    int *out_int = NULL;
+    char *out_char = NULL;
+    char **out_string = NULL;
+
+    va_list argp;
+    va_start(argp, fmt);
+
+    for(i = 0; fmt[i] != '\0'; i++){
+        if(fmt[i] == '%'){
+            i++;
+            switch (fmt[i])
+            {
+            case '\0':
+                sentinel("Invalid format, you ended with %%.");
+                break;
+                
+            case 'd':
+                out_int = va_arg(argp, int *);
+                rc = print_int(out_int);
+                check(rc == 0, "Failed to print int");
+                break;
+            
+            case 'c':
+                out_char = va_arg(argp, char *);
+                *out_char = fputc(*out_char, stdout);
+                break;
+            
+            case 's':
+                out_string = va_arg(argp, char **);
+                rc = print_string(out_string);
+                check(rc == 0, "Failed to print string");
+                break;
+                
+            /*case 'f':
+                out_float = va_arg(argp, float*);
+                rc = read_float(out_float);
+                check(rc == 0, "Failed to read float");
+                break;*/
+                
+            
+            default:
+                sentinel("Invalid format.");
+                break;
+                
+            }
+        } else {
+            fputc(fmt[i], stdout);
+        }
+    }
+    va_end(argp);
+    return 0;
+
+    error:
+        va_end(argp);
+        return 1;
+}
+
 int read_string(char **out_string, int max_buffer){
     *out_string = calloc(1, max_buffer + 1);
     check_mem(*out_string);
@@ -121,12 +231,15 @@ int main(){
 
     printf("How old are you? ");
     rc = read_scan("%d", &age);
+    check(rc == 0, "Failed to read age");
 
     printf("----- RESULTS -----\n");
-    printf("First Name: %s", first_name);
-    printf("Initial: '%c'\n", initial);
-    printf("Last Name: %s", last_name);
-    printf("Age: %d\n", age);
+
+    //printf("First Name: %s", first_name);
+    new_printf("First Name: %s", &first_name);
+    new_printf("Initial: '%c'\n", &initial);
+    new_printf("Last Name: %s", &last_name);
+    new_printf("Age: %d\n", &age);
 
     free(first_name);
     free(last_name);
