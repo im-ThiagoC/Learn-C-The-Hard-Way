@@ -90,13 +90,6 @@ int new_printf(const char *fmt, ...){
                 rc = print_string(out_string);
                 check(rc == 0, "Failed to print string");
                 break;
-                
-            /*case 'f':
-                out_float = va_arg(argp, float*);
-                rc = read_float(out_float);
-                check(rc == 0, "Failed to read float");
-                break;*/
-                
             
             default:
                 sentinel("Invalid format.");

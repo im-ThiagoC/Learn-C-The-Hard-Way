@@ -3,6 +3,7 @@
         "initializer_list": "c",
         "xstring": "c",
         "xutility": "c",
-        "stdarg.h": "c"
+        "stdarg.h": "c",
+        "stdio.h": "c"
     }
 }
