@@ -3,6 +3,7 @@
 *Geral: Esse algoritmo faz o match do parâmetro com o conteúdo de algum arquivo buscado
 *
 *Uso: ./logfind [string buscada]
+*Opcional: ./logfind [string1] [string2] ... [stringN]
 *Listagem de arquivos permitidos ./logfind
 *
 *Output: todos arquivos que contenham [string] em seu conteúdo
@@ -51,10 +52,13 @@ int main(int argc, char *argv[])
         //*Abre o arquivo e verifica se abriu com êxito
         fp = fopen(files[fileLoop], "r");
         check(fp != NULL, "File error");
+        //log_info("Entrando em %s", files[fileLoop]);
 
-        int i = 0;
+        //Reset
+        int i = 1;
         int flag = 0;
-        for(i = 1; i < argc - 1; i++){ //Percorre cada palavra de entrada na execução
+
+        for(i = 1; i < argc; i++){ //Percorre cada palavra de entrada na execução
             memcpy(word, argv[i], MAX_SIZE); // Copia o conteúdo passado como parâmetro na execução para word
 
             while (fgets(buffer, sizeof(buffer), fp)){ // Lê cada palavra do arquivo e salva em buffer.
@@ -68,6 +72,10 @@ int main(int argc, char *argv[])
                     
                     if (strstr(buffer, word))
                     { //* Verifica a Substring
+                        //Rebobina para inicio do arquivo
+                        rewind(fp);
+                        //? fseek() tbm funciona
+                        //fseek(fp, 0, 0);
                         flag++;
                         
                         break;
