@@ -1,11 +1,11 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -DNDEBUG
-TARGET = logfindv2.exe
-SRC = logfindv2.c
+TARGET = ex27.exe
+SRC = ex27.c
 
 .PHONY: all clean test
 
-all: logfindv2
+all: ex27
 
 $(TARGET): $(SRC)
 	$(CC) $(CFLAGS) $^ -o $@
