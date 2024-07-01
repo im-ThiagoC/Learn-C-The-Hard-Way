@@ -8,14 +8,7 @@
 #define MAX_FILENAME_LENGTH 256
 #define MAX_SIZE 256
 #define MAX_BUFFER 256
-
-typedef enum {
-    DIR_NONE,
-    DIR_GIT,
-    DIR_VS,
-    DIR_VSCODE,
-    DIR_MAX
-} DisallowedDir;
+#define DISALLOWED_DIRS 4
 
 const char *disallowedDirs[] = {
     "",
@@ -25,7 +18,7 @@ const char *disallowedDirs[] = {
 };
 
 int isDisallowedDir(const char *dirName) {
-    for (int i = 1; i < DIR_MAX; i++) {
+    for (int i = 1; i < DISALLOWED_DIRS; i++) {
         if (strcmp(dirName, disallowedDirs[i]) == 0) {
             return 1;
         }
