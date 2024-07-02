@@ -123,7 +123,7 @@ int main(int argc, char *argv[]) {
                     { //* Verifica a Substring
                         //Rebobina para inicio do arquivo
                         rewind(fp);
-                        //? fseek() tbm funciona
+                        //? fseek() works too
                         //fseek(fp, 0, 0);
                         flag++;
                         

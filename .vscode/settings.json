@@ -4,6 +4,9 @@
         "xstring": "c",
         "xutility": "c",
         "stdarg.h": "c",
-        "stdio.h": "c"
-    }
+        "stdio.h": "c",
+        "assert.h": "c",
+        "ex22.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
