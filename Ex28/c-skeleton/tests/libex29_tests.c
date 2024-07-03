@@ -1,5 +1,5 @@
 #include "minunit.h"
-#include "dlfcn.h"
+#include <dlfcn.h>
 
 typedef int (*lib_function) (const char *data);
 char *lib_file = "build/libYOUR_LIBRARY.so";
@@ -24,7 +24,7 @@ error:
 
 char *test_dlopen()
 {
-    lib = dlopen(lib_file, RTLD_LAZY);
+    lib = dlopen(lib_file, RTLD_NOW);
     mu_assert(lib != NULL, "Failed to open the library to test.");
 
     return NULL;

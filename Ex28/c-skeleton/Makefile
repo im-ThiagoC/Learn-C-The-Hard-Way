@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS=-g -O2 -Wall -Wextra -Isrc -DNDEBUG $(OPTFLAGS)
-LIBS=-ldl $(OPTLIBS)
+LIBS= $(OPTLIBS)
 PREFIX?=.
 
 SOURCES=$(wildcard src/**/*.c src/*.c)

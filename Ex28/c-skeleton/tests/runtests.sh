@@ -4,7 +4,7 @@ for i in tests/*tests
 do
     if test -f $i
     then
-        if $VALGRIND ./$i 2>> tests/tests.log
+        if $VALGRIND ./$i 2>> tests/tests.log #I need UNIX system for Valgrind
         then
             echo $i PASS
         else
