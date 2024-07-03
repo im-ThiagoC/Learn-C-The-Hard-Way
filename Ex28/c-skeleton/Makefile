@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS=-g -O2 -Wall -Wextra -Isrc -DNDEBUG $(OPTFLAGS)
-LIBS= $(OPTLIBS)
-PREFIX?=.
+LIBS= -ldl $(OPTLIBS)
+PREFIX?=/mingw64/
 
 SOURCES=$(wildcard src/**/*.c src/*.c)
 OBJECTS=$(patsubst %.c,%.o,$(SOURCES))
@@ -9,7 +9,7 @@ OBJECTS=$(patsubst %.c,%.o,$(SOURCES))
 TEST_SRC=$(wildcard tests/*_tests.c)
 TESTS=$(patsubst %.c,%,$(TEST_SRC))
 
-TARGET=build/libYOUR_LIBRARY.a
+TARGET=build/ThiagoLIB.a
 SO_TARGET=$(patsubst %.a,%.so,$(TARGET))
 
 # The Target Build

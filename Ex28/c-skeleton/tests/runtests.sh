@@ -1,10 +1,10 @@
 echo "Running unit tests:"
 
-for i in tests/*tests
+for i in tests/*_tests.c
 do
-    if test -f $i
+    if test $i
     then
-        if $VALGRIND ./$i 2>> tests/tests.log #I need UNIX system for Valgrind
+        if $VALGRIND ./$i 2>> tests/tests.log #I need UNIX system for this
         then
             echo $i PASS
         else

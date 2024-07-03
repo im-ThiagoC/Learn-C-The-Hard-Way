@@ -15,8 +15,10 @@ int print_a_message(const char *msg)
 int uppercase(const char *msg)
 {
     int i = 0;
-
-    check(strlen(msg) - 1 == '\0', "No terminated string");
+    
+    if(msg[strlen(msg) - 1] != '\0')
+        return 1;
+    
     for(i = 0; msg[i] != '\0'; i++) {
         printf("%c", toupper(msg[i]));
     }
@@ -24,14 +26,13 @@ int uppercase(const char *msg)
     printf("\n");
 
     return 0;
-    error:
-        return 1;
 }
 
 int lowercase(const char *msg)
 {   
     int i = 0;
-    check(strlen(msg) - 1 == '\0', "No terminated string")
+    if(msg[strlen(msg) - 1] != '\0')
+        return 1;
     
     for(i = 0; msg[i] != '\0'; i++) {
         printf("%c", tolower(msg[i]));
@@ -40,6 +41,9 @@ int lowercase(const char *msg)
     printf("\n");
 
     return 0;
-    error:
-        return 1;
+}
+
+int fail_on_purpose(const char *msg){
+    puts(msg);
+    return 1;
 }

@@ -1,0 +1,2 @@
+./tests/libex29_tests.c: line 4: syntax error near unexpected token `('
+./tests/libex29_tests.c: line 4: `typedef int (*lib_function)(const char *data);'

@@ -7,7 +7,10 @@
         "stdio.h": "c",
         "assert.h": "c",
         "ex22.h": "c",
-        "dlfcn.h": "c"
+        "dlfcn.h": "c",
+        "dbg.h": "c"
     },
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.default.compilerPath": "cl.exe",
+    "C_Cpp.intelliSenseEngineFallback": "enabled"
 }
