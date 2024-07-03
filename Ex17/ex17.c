@@ -191,6 +191,7 @@ void Database_set(struct Connection *conn, int id, const char* name, const char*
     if(addr->set){
         die(conn, "Already set, delete it first.");
     }
+    
     addr->set = 1;
 
     //Copy name to addr->name
@@ -283,7 +284,8 @@ int main(int argc, char* argv[]){
     int MAX_ROWS = 100;
 
     if(argc < 3){
-        printf("USAGE: ex17 <dbfile> <action> [action params]");
+        printf("USAGE: ex17 <dbfile> <action> [action params]\n");
+        return 1;
     }
 
     char* filename = argv[1];

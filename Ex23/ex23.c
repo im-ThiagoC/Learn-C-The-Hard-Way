@@ -122,7 +122,7 @@ int main(){
     //duffs version
     printf("Duff's device copy\n");
     rc = duffs_device(from, to, 1000);
-    check(rc = 1000, "Duff's device failed copy");
+    check(rc == 1000, "Duff's device failed copy");
     check(valid_copy(to, 1000, 'x'), "Duff's device failed copy.");
     
     //reset
@@ -131,7 +131,7 @@ int main(){
     //zedd version
     printf("Zed's device copy\n");
     rc = zeds_device(from, to, 1000);
-    check(rc = 1000, "Zed's device failed copy");
+    check(rc == 1000, "Zed's device failed copy");
     check(valid_copy(to, 1000, 'x'), "Zed's device failed copy.");
 
     // Stop timing (read current counter value) and determine elapsed time

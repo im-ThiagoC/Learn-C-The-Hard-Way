@@ -44,9 +44,10 @@ int main (int argc, char* argv[]){
         default:
             printf("%d: %c is not a vowel\n", i, letter);
             break;
-        }
+        }*/
 
         /*Extra Credits*/
+
         if(letter == 'A' || letter == 'a'){
             printf("%d: 'A'\n", i);
             continue;
