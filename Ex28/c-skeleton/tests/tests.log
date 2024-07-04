@@ -3,5 +3,7 @@ DEBUG tests/libex29_tests.c:64:
 ----- test_dlopen
 DEBUG tests/libex29_tests.c:65: 
 ----- test_functions
-[ERROR] (tests/libex29_tests.c:17: errno: None in check_function function) Function uppercase return 1 for data: Hello
-[ERROR] (tests/libex29_tests.c:36: errno: None in test_functions function) uppercase failed.
+DEBUG tests/libex29_tests.c:66: 
+----- test_failures
+DEBUG tests/libex29_tests.c:67: 
+----- test_dlclose

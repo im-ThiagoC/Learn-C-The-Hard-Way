@@ -9,7 +9,8 @@
         "ex22.h": "c",
         "dlfcn.h": "c",
         "dbg.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "minunit.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "C_Cpp.default.compilerPath": "cl.exe",

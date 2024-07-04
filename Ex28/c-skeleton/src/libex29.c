@@ -16,7 +16,7 @@ int uppercase(const char *msg)
 {
     int i = 0;
     
-    if(msg[strlen(msg) - 1] != '\0')
+    if(msg[strlen(msg)] != '\0')
         return 1;
     
     for(i = 0; msg[i] != '\0'; i++) {
@@ -31,7 +31,7 @@ int uppercase(const char *msg)
 int lowercase(const char *msg)
 {   
     int i = 0;
-    if(msg[strlen(msg) - 1] != '\0')
+    if(msg[strlen(msg)] != '\0')
         return 1;
     
     for(i = 0; msg[i] != '\0'; i++) {
