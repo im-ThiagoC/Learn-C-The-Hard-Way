@@ -1,10 +1,10 @@
 echo "Running unit tests:"
 
-for i in tests/*_tests.c
+for i in tests/*_tests
 do
-    if test $i
+    if test -f $i
     then
-        if ./$i 2>> tests/tests.log #I need UNIX system for this
+        if $VALGRIND ./$i 2>> tests/tests.log
         then
             echo $i PASS
         else

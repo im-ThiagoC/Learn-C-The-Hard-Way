@@ -10,7 +10,9 @@
         "dlfcn.h": "c",
         "dbg.h": "c",
         "string.h": "c",
-        "minunit.h": "c"
+        "minunit.h": "c",
+        "xmemory": "c",
+        "utility": "c"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "C_Cpp.default.compilerPath": "cl.exe",
