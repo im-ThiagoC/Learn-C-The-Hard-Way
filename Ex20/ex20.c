@@ -67,7 +67,7 @@ int main (int argc, char* argv[]){
 void testSorting(int *numbers, int count, char sortType, char sortOrder){
     int i = 0;
     int *sorted;
-    compare_cb cmp = sortedOrder;
+    compare_cb cmp;
 
     //Switch for each Order, default is sorted
     switch (sortOrder)

@@ -2,7 +2,7 @@
 #include <lcthw/list.h>
 #include <assert.h>
 
-static List *list = NULL;
+static List *list;
 char *test1 = "test1 data";
 char *test2 = "test2 data";
 char *test3 = "test3 data";

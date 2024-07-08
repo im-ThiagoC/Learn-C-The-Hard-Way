@@ -18,25 +18,50 @@ typedef struct List {
 } List;
 
 //Foward Functions
+
+//Aloca espaço para lista
 List *List_create();
+//Limpa a lista
 void List_destroy(List *list);
+//Limpa os valores da lista
 void List_clear(List *list);
+//Destrói tudo
 void List_clear_destroy(List *list);
 
+//Quantidade de Elementos na lista
 #define List_count(A) ((A)->count)
+//Primeiro elemento da Lista
 #define List_first(A) ((A)->first != NULL ? (A)->first->value : NULL)
+//Último elemento da lista
 #define List_last(A)  ((A)->last != NULL ? (A)->last->value : NULL)
 
+//Insere um valor na lista
 void List_push(List *list, void *value);
+
+//Retira o último valor da lista
 void *List_pop(List *list);
 
+//Adiciona um valor no inicio da lista
 void List_unshift(List *list, void *value);
+
+//Remove o primeiro nó da lista
 void *List_shift(List *list);
 
+//Remove o nó especificado
 void *List_remove(List *list, ListNode *node);
 
-#define LIST_FOREACH(L, S, M, V) ListNode *_node = NULL;\
+//Itera sobre cada nó da lista
+#define LIST_FOREACH(L, S, M, V) \
+    ListNode *_node = NULL;\
     ListNode *V = NULL;\
     for(V = _node = L->S; _node != NULL; V = _node = _node->M)
 
+//Copia uma lista para outra existente
+List *List_copy(List *list1, List *list2);
+
+//Salva todos elementos da lista 2 na lista 1
+List *List_join(List *list1, List *list2);
+
+//Parte a lista em determinado ponto e separa em duas listas distintas
+List *List_split(List *list1, int index);
 #endif
