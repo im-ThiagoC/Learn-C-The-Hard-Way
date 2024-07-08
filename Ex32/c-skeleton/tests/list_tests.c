@@ -3,13 +3,15 @@
 #include <assert.h>
 
 static List *list;
+static List *list2;
 char *test1 = "test1 data";
 char *test2 = "test2 data";
 char *test3 = "test3 data";
 
 char *test_create() {
     list = List_create();
-    mu_assert(list != NULL, "Failed to create list.");
+    list2 = List_create();
+    mu_assert(list != NULL && list2 != NULL, "Failed to create list.");
 
     return NULL;
 }
@@ -87,6 +89,50 @@ char *test_shift() {
     return NULL;
 }
 
+char *test_copy(){
+    List_push(list, test1);
+    List_push(list, test2);
+    List_push(list, test3);
+
+    List_copy(list, list2);
+    ListNode *node1;
+    ListNode *node2;
+
+    int i = 0;
+    for(node1 = list->first, node2 = list2->first;
+         node1->next != NULL;
+         node1 = node1->next, node2 = node2->next){
+        mu_assert(node1->value == node2->value, "Fail in copy lists");
+    }
+
+    return NULL;
+}
+
+char *test_join(){
+    List_join(list, list2);
+    mu_assert(list->count != 6, "Fail to join");
+
+    return NULL;
+}
+
+
+
+char *test_split(){
+    List_split(list, 3);
+    ListNode *node1;
+    ListNode *node2;
+
+    int i = 0;
+    for(node1 = list->first, node2 = list2->first;
+         node1->next != NULL;
+         node1 = node1->next, node2 = node2->next)
+    {
+        mu_assert(node1->value == node2->value, "Fail to split lists");
+    }
+
+    return NULL;
+}
+
 char *all_tests() {
     mu_suite_start();
 
@@ -95,6 +141,9 @@ char *all_tests() {
     mu_run_test(test_unshift);
     mu_run_test(test_remove);
     mu_run_test(test_shift);
+    mu_run_test(test_copy);
+    mu_run_test(test_join);
+    mu_run_test(test_split);
     mu_run_test(test_destroy);
 
     return NULL;

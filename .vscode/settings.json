@@ -12,7 +12,9 @@
         "string.h": "c",
         "minunit.h": "c",
         "xmemory": "c",
-        "utility": "c"
+        "utility": "c",
+        "type_traits": "c",
+        "xtr1common": "c"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "C_Cpp.default.compilerPath": "cl.exe",

@@ -56,7 +56,7 @@ void *List_remove(List *list, ListNode *node);
     ListNode *V = NULL;\
     for(V = _node = L->S; _node != NULL; V = _node = _node->M)
 
-//Copia uma lista para outra existente
+//Copia os elementos da lista 2 para lista 1
 List *List_copy(List *list1, List *list2);
 
 //Salva todos elementos da lista 2 na lista 1
