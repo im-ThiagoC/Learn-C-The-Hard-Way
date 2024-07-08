@@ -24,12 +24,8 @@ void List_clear(List *list){
 }
 
 void List_clear_destroy(List *list){
-    LIST_FOREACH(list, first, next, cur){
-        free(cur->value);
-        if(cur->prev) {
-            free(cur->prev);
-        }
-    }
+    List_clear(list);
+    List_destroy(list);
 }
 
 void List_push(List *list, void *value){
@@ -87,7 +83,7 @@ void *List_shift(List *list) {
 void *List_remove(List *list, ListNode *node) {
     void *result = NULL;
 
-    check(list->first && node == list->last, "List is empty.");
+    check(list->first && list->last, "List is empty.");
     check(node, "Node can't be NULL");
 
     if(node == list->first && node == list->last){
@@ -119,41 +115,39 @@ void *List_remove(List *list, ListNode *node) {
         return result;
 }
 
-//Copia uma lista para outra existente
-List *List_copy(List *list1, List *list2) {
-    List_clear_destroy(list1);
+//Copia os elementos da lista 2 para lista 1
+void List_copy(List *list1, List *list2) {
+    List_clear(list1);
 
     LIST_FOREACH(list2, first, next, cur){
         List_push(list1, cur->value);
     }
-
-    return list1;
 }
 
 //Salva todos elementos da lista 2 na lista 1
-List *List_join(List *list1, List *list2) {
+void List_join(List *list1, List *list2) {
     LIST_FOREACH(list2, first, next, cur){
         List_push(list1, cur->value);
     }
-
-    return list1;
 }
 
 //Parte a lista em determinado ponto até outro determinado ponto
-List *List_split(List *list, int index) {
+void *List_split(List *list1, List *list2, int index) {
     check(index > 0, "Index precisa ser maior que 0");
-    check(index > list->count, "Index não pode ser maior que o tamanho da lista");
-    List *segundaParte = List_create();
+    check(index < list2->count, "Index não pode ser maior que o tamanho da lista");
+    log_info("Teste!");
 
     int count = 0;
-    LIST_FOREACH(list, first, next, cur){
+    LIST_FOREACH(list2, first, next, cur){
         if(count > index){
-            List_push(segundaParte, cur->prev->value);
-            List_remove(list, cur->prev);
+            if(cur->prev) {
+                List_push(list2, cur->prev->value);
+                free(cur->prev);
+            }
         }
     }
 
-    return segundaParte;
+    return NULL;
     error:
-        return list;
+        return NULL;
 }

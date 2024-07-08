@@ -57,10 +57,10 @@ void *List_remove(List *list, ListNode *node);
     for(V = _node = L->S; _node != NULL; V = _node = _node->M)
 
 //Copia os elementos da lista 2 para lista 1
-List *List_copy(List *list1, List *list2);
+void List_copy(List *list1, List *list2);
 
 //Salva todos elementos da lista 2 na lista 1
-List *List_join(List *list1, List *list2);
+void List_join(List *list1, List *list2);
 
 //Parte a lista em determinado ponto e separa em duas listas distintas
 List *List_split(List *list1, int index);

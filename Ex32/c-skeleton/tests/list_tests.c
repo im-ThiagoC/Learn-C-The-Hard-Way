@@ -18,7 +18,7 @@ char *test_create() {
 
 char *test_destroy() {
     List_clear_destroy(list);
-    
+    List_clear_destroy(list2);
     return NULL;
 }
 
@@ -94,42 +94,46 @@ char *test_copy(){
     List_push(list, test2);
     List_push(list, test3);
 
-    List_copy(list, list2);
+    List_copy(list2, list);
+
+    
     ListNode *node1;
     ListNode *node2;
 
-    int i = 0;
     for(node1 = list->first, node2 = list2->first;
          node1->next != NULL;
          node1 = node1->next, node2 = node2->next){
         mu_assert(node1->value == node2->value, "Fail in copy lists");
     }
 
+    log_info("%s", list2->first->value);
+    log_info("%s", list2->first->next->value);
+
     return NULL;
 }
 
 char *test_join(){
     List_join(list, list2);
-    mu_assert(list->count != 6, "Fail to join");
+    log_info("%d", list->count);
+    mu_assert(list->count == 6, "Fail to join");
 
     return NULL;
 }
 
-
-
 char *test_split(){
-    List_split(list, 3);
+    List *new = List_create();
+    new = List_split(list, 3);
+    log_info("%s", new->first->value);
     ListNode *node1;
     ListNode *node2;
-
-    int i = 0;
-    for(node1 = list->first, node2 = list2->first;
-         node1->next != NULL;
+    
+    for(node1 = list->first, node2 = new->first;
+         node1->next != NULL && node2->next != NULL;
          node1 = node1->next, node2 = node2->next)
     {
+        log_info("node1 %s node2 %s", node1->value, node2->value);
         mu_assert(node1->value == node2->value, "Fail to split lists");
     }
-
     return NULL;
 }
 
