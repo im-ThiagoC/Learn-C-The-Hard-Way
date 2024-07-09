@@ -18,9 +18,16 @@ void List_destroy(List *list){
 }
 
 void List_clear(List *list){
-    LIST_FOREACH(list, first, next, cur) {
-        free(cur->value);
+    ListNode* current = list->first;
+    ListNode* nextNode;
+
+    while (current != NULL) {
+        nextNode = current->next;
+        free(current);
+        current = nextNode;
     }
+
+    list->count = 0;
 }
 
 void List_clear_destroy(List *list){
@@ -131,23 +138,44 @@ void List_join(List *list1, List *list2) {
     }
 }
 
-//Parte a lista em determinado ponto até outro determinado ponto
+//Parte a lista em determinado ponto e separa em duas listas
 void *List_split(List *list1, List *list2, int index) {
     check(index > 0, "Index precisa ser maior que 0");
-    check(index < list2->count, "Index não pode ser maior que o tamanho da lista");
-    log_info("Teste!");
+    check(index < list1->count, "Index não pode ser maior que o tamanho da lista");
+    
+    ListNode *cur_node;
+    cur_node = list1->first;
+    List_clear(list2);
 
     int count = 0;
-    LIST_FOREACH(list2, first, next, cur){
-        if(count > index){
-            if(cur->prev) {
-                List_push(list2, cur->prev->value);
-                free(cur->prev);
-            }
+
+    for(count = 0; count < index; count++){
+        cur_node = cur_node->next;
+    }
+    
+    for(count = index; index < list1->count; count++){
+        List_push(list2, cur_node->value);
+
+        if(cur_node->next != NULL){
+            cur_node = cur_node->next;
         }
+        else{
+            List_remove(list1, cur_node);
+            break;
+        }
+        List_remove(list1, cur_node->prev);
+        
+        printf("---%s---\n", cur_node->value);
     }
 
     return NULL;
     error:
         return NULL;
+}
+
+void List_print(List *list){
+        printf("--- Print ---\n");
+    LIST_FOREACH(list, first, next, cur){
+        printf("%s\n", cur->value);
+    }
 }
