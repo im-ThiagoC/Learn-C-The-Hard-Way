@@ -68,4 +68,8 @@ void *List_split(List *list1, List *list2, int index);
 //Imprime todos elementos da lista
 void List_print(List *list);
 
+//Remove todos valores de uma lista
+void List_remove_all(List *list);
+
+
 #endif

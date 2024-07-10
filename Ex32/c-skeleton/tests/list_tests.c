@@ -125,9 +125,16 @@ char *test_join(){
 
 char *test_split(){
 
-    List_split(list, list2, 3);
 
     printf("Imprimindo Lista entrando no split:\n");
+    List_print(list);
+
+    printf("Lista 2:\n");
+    List_print(list2);
+    
+    List_split(list, list2, 3);
+
+    printf("Imprimindo Lista saindo do split:\n");
     List_print(list);
 
     printf("Lista 2:\n");
