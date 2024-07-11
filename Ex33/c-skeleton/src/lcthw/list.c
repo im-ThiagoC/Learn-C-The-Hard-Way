@@ -137,31 +137,31 @@ void List_join(List *list1, List *list2) {
 }
 
 //Parte a lista em determinado ponto e separa em duas listas
-void *List_split(List *list1, List *list2, int index) {
+void *List_split(List *main, List *list1, List *list2, int index) {
     check(index > 0, "Index precisa ser maior que 0");
-    check(index < list1->count, "Index não pode ser maior que o tamanho da lista");
+    check(index < main->count, "Index não pode ser maior que o tamanho da lista");
     
     ListNode *currentNode;
     ListNode *nextNode;
 
     //Começa pelo primeiro valor da lista
-    currentNode = list1->first;
+    currentNode = main->first;
 
     //Limpa a segunda lista
+    List_remove_all(list1);
     List_remove_all(list2);
-
+    List_print(main);
     int count = 0;
     //Loop para chegar no inicio do split
     for(count = 0; count < index; count++){
+        List_push(list1, currentNode->value);
         currentNode = currentNode->next;
     }
     
     //Loop para começar a pegar os valores da primeira lista e inserir na segunda, depois, remove da primeira lista
     while(currentNode != NULL){
-        nextNode = currentNode->next;
         List_push(list2, currentNode->value);
-        List_remove(list1, currentNode);
-        currentNode = nextNode;
+        currentNode = currentNode->next;
     }
 
     return NULL;
@@ -172,7 +172,7 @@ void *List_split(List *list1, List *list2, int index) {
 void List_print(List *list){
         printf("--- Print ---\n");
     LIST_FOREACH(list, first, next, cur){
-        //printf("%s\n", cur->value);
+        printf("%s\n", (char *)cur->value);
     }
 }
 

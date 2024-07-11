@@ -4,6 +4,7 @@
 
 static List *list;
 static List *list2;
+static List *list3;
 
 char *test1 = "test1 data";
 char *test2 = "test2 data";
@@ -12,6 +13,7 @@ char *test3 = "test3 data";
 char *test_create() {
     list = List_create();
     list2 = List_create();
+    list3 = List_create();
     mu_assert(list != NULL && list2 != NULL, "Failed to create list.");
 
     return NULL;
@@ -21,6 +23,7 @@ char *test_destroy() {
 
     List_destroy(list);
     List_destroy(list2);
+    List_destroy(list3);
     return NULL;
 }
 
@@ -126,19 +129,19 @@ char *test_join(){
 char *test_split(){
 
 
-    printf("Imprimindo Lista entrando no split:\n");
+    /*printf("Imprimindo Lista entrando no split:\n");
     List_print(list);
 
     printf("Lista 2:\n");
-    List_print(list2);
+    List_print(list2);*/
     
-    List_split(list, list2, 2);
+    List_split(list, list2, list3, 2);
 
     printf("Imprimindo Lista saindo do split:\n");
-    List_print(list);
+    List_print(list2);
 
     printf("Lista 2:\n");
-    List_print(list2);
+    List_print(list3);
     return NULL;
 }
 

@@ -51,6 +51,7 @@ void *List_shift(List *list);
 void *List_remove(List *list, ListNode *node);
 
 //Itera sobre cada nó da lista
+//LIST_FOREACH(list, first, next, cur);
 #define LIST_FOREACH(L, S, M, V) \
     ListNode *_node = NULL;\
     ListNode *V = NULL;\
@@ -62,7 +63,7 @@ void List_copy(List *list1, List *list2);
 //Salva todos elementos da lista 2 na lista 1
 void List_join(List *list1, List *list2);
 
-//Parte a lista em determinado ponto e separa em duas listas distintas
+//Parte a lista em determinado ponto e separa em duas novas listas
 void *List_split(List *main, List *list1, List *list2, int index);
 
 //Imprime todos elementos da lista
