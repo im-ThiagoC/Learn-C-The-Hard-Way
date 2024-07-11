@@ -16,7 +16,7 @@ int List_bubble_sort(List *list, List_compare cmp){
         LIST_FOREACH(list, first, next, cur){
             if(cur->next != NULL){
                 if(cmp(cur->value, cur->next->value) > 0){
-                printf("Trocando %s por %s\n", (char *) cur->value, (char *) cur->next->value);
+                // printf("Trocando %s por %s\n", (char *) cur->value, (char *) cur->next->value);
                 ListNode_swap(cur, cur->next);
                 sorted = 1;
                 }
@@ -29,25 +29,34 @@ int List_bubble_sort(List *list, List_compare cmp){
 }
 
 List *List_merge(List *left, List *right, List_compare cmp){
+    //Cria a lista onde o resultado será retornado
+    //?Talvez só precise de uma?
     List *result = List_create();
+
+    //Recebe o ponteiro para o valor, pode ser char*, int...
     void *val = NULL;
 
+    //Enquanto houver valores em left e right...
     while (List_count(left) || List_count(right)){
-        if (List_count(left) && List_count(right)){
 
+        if (List_count(left) && List_count(right)){
+            //Método comparativo entre dois valores
             if (cmp(List_first(left), List_first(right)) <= 0){
                 val = List_shift(left);
             } else {
                 val = List_shift(right);
             }
 
+            //Result recebe o menor valor entre o primeiro elemento de left e o primeiro elemento de right
             List_push(result, val);
 
         } 
+        //Se sobrar algum valor em left...
         else if (List_count(left) > 0){
             val = List_shift(left);
             List_push(result, val);
         }
+        //Se sobrar algum valor em right...
         else if (List_count(right) > 0){
             val = List_shift(right);
             List_push(result, val);
@@ -59,13 +68,19 @@ List *List_merge(List *left, List *right, List_compare cmp){
 
 List *List_merge_sort(List *list, List_compare cmp){
 
+    //Critério de parada para recursão
     if(List_count(list) <= 1){
         return list;
     }
 
+    //Cria a parte Esquerda e Direita da lista
     List *left = List_create();
     List *right = List_create();
+
+    //Divide a lista main em esquerda e direita, pelo meio
     List_split(list, left, right, (List_count(list)/2));
+
+    //Faz isso recursivamente até que haja apenas 1 elemento na lista
     List *sort_left = List_merge_sort(left, cmp);
     List *sort_right = List_merge_sort(right, cmp);
 
@@ -76,6 +91,7 @@ List *List_merge_sort(List *list, List_compare cmp){
         List_destroy(right);
     }
 
+    //Chama a função de ordenação
     return List_merge(sort_left, sort_right, cmp);
 }
 

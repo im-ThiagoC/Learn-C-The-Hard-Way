@@ -2,8 +2,11 @@
 #include <lcthw/list_algos.h>
 #include <assert.h>
 #include <string.h>
+#include <time.h>
 
 char *values[] = { "XXXX", "1234", "abcd", "xjvef", "NDSS"};
+clock_t start, end;
+double cpu_time_used;
 
 #define NUM_VALUES 5
 
@@ -69,11 +72,24 @@ char *test_merge_sort(){
     return NULL;
 }
 
+
+
 char *all_tests(){
     mu_suite_start();
 
+    start = clock();
     mu_run_test(test_bubble_sort);
+    end = clock();
+    cpu_time_used = ((double) (end));
+    printf("%f\n", cpu_time_used);
+
+    start = clock();
     mu_run_test(test_merge_sort);
+    getchar();
+    end = clock();
+    cpu_time_used = ((double) (end));
+
+    printf("%f\n", cpu_time_used);
 
     return NULL;
 }
