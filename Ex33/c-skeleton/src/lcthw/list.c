@@ -142,7 +142,6 @@ void *List_split(List *main, List *list1, List *list2, int index) {
     check(index < main->count, "Index não pode ser maior que o tamanho da lista");
     
     ListNode *currentNode;
-    ListNode *nextNode;
 
     //Começa pelo primeiro valor da lista
     currentNode = main->first;
