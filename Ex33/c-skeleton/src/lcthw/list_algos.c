@@ -78,7 +78,16 @@ List *List_merge_sort(List *list, List_compare cmp){
     List *right = List_create();
 
     //Divide a lista main em esquerda e direita, pelo meio
-    List_split(list, left, right, (List_count(list)/2));
+    // List_split(list, left, right, (List_count(list)/2));
+    int middle =  List_count(list)/2;
+
+    LIST_FOREACH(list, first, next, cur){
+        if(middle > 0) {
+            List_push(left, cur->value);
+        } else {
+            List_push(right, cur->value);
+        }
+    }
 
     //Faz isso recursivamente até que haja apenas 1 elemento na lista
     List *sort_left = List_merge_sort(left, cmp);
