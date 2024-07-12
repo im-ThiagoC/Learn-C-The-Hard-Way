@@ -85,7 +85,6 @@ char *all_tests(){
 
     start = clock();
     mu_run_test(test_merge_sort);
-    getchar();
     end = clock();
     cpu_time_used = ((double) (end));
 
