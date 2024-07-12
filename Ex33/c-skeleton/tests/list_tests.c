@@ -137,11 +137,11 @@ char *test_split(){
     
     List_split(list, list2, list3, 2);
 
-    printf("Imprimindo Lista saindo do split:\n");
+    /*printf("Imprimindo Lista saindo do split:\n");
     List_print(list2);
 
     printf("Lista 2:\n");
-    List_print(list3);
+    List_print(list3);*/
     return NULL;
 }
 

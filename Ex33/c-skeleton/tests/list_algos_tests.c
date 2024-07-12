@@ -4,7 +4,7 @@
 #include <string.h>
 #include <time.h>
 
-char *values[] = { "XXXX", "1234", "abcd", "xjvef", "NDSS"};
+char *values[] = { "XXXX", "1234", "abcd", "xjvef", "NDSS", "new1", "new2"};
 clock_t start, end;
 double cpu_time_used;
 
@@ -80,13 +80,13 @@ char *all_tests(){
     start = clock();
     mu_run_test(test_bubble_sort);
     end = clock();
-    cpu_time_used = ((double) (end));
+    cpu_time_used = ((double) (end)) / CLOCKS_PER_SEC;
     printf("%f\n", cpu_time_used);
 
     start = clock();
     mu_run_test(test_merge_sort);
     end = clock();
-    cpu_time_used = ((double) (end));
+    cpu_time_used = ((double) (end)) / CLOCKS_PER_SEC;
 
     printf("%f\n", cpu_time_used);
 
