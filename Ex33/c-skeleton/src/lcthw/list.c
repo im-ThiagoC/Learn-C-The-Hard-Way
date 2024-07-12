@@ -35,6 +35,7 @@ void List_clear_destroy(List *list){
     List_destroy(list);
 }
 
+//Insere na última posição
 void List_push(List *list, void *value){
     ListNode *node = calloc(1, sizeof(ListNode));
     check_mem(node);
@@ -149,7 +150,7 @@ void *List_split(List *main, List *list1, List *list2, int index) {
     //Limpa a segunda lista
     List_remove_all(list1);
     List_remove_all(list2);
-    
+
     int count = 0;
     //Loop para chegar no inicio do split
     for(count = 0; count < index; count++){

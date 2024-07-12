@@ -112,3 +112,72 @@ void ListNode_swap(ListNode *a, ListNode *b){
     a->value = b->value;
     b->value = temp;
 }
+
+//Insere um elemento no meio de uma Lista Duplamente Encadeada
+//Como parâmetro passa a Lista, o Nó anterior ao que será inserido e o valor do novo nó
+void *List_insert(List *list, ListNode *node, void *value){
+    ListNode *new_node = calloc(1, sizeof(ListNode));
+    check_mem(node);
+    assert(value != NULL);
+    
+    //Cria os ponteiros do novo nó
+    new_node->prev = node;
+    new_node->value = value;
+    new_node->next = node->next;
+
+    //Atualiza o ponteiro anterior
+    node->next = new_node;
+
+    //Atualiza o próximo ponteiro
+    new_node->next->prev = new_node;
+
+
+    //Aumenta a contagem da lista
+    list->count++;
+
+    return NULL;
+    
+    error:
+        return NULL;
+}
+
+//Função que insere os elementos de uma lista principal ORDENADAMENTE em uma nova lista.
+List *List_inserted_sort(List *list, List_compare cmp){
+    List *sorted_List = List_create();
+    //Insere ordenadamente os valores da lista inicial na nova lista
+
+    //Para cada elemento da lista principal...
+    LIST_FOREACH(list, first, next, cur){
+        //Se for o primeiro elemento, apenas insere na primeira posição
+        if(sorted_List->first == NULL){
+            List_push(sorted_List, cur->value);
+        } 
+        //Senão, busca pela lista até achar sua posição 
+        else {
+            //Para cada elemento inserido na nova lista
+            LIST_FOREACH(sorted_List, first, next, sorted_Cur){
+                //Se o próximo não for nulo
+                if(sorted_Cur->next != NULL){
+                    //Compara se o próximo valor é maior que o valor para ser inserido
+                    if(cmp(sorted_Cur->next->value, cur->value) >= 0){
+                        //Se sim, insere uma posição antes dele
+                        List_insert(sorted_List, sorted_Cur, cur->value);
+                        //Quebra o looping
+                        break;
+                    }
+                }
+                else if(cmp(sorted_List->first->value, cur->value) >= 0){
+                    List_unshift(sorted_List, cur->value);
+                }
+                //Se o próximo for nulo é porque é o maior valor 
+                else {
+                    List_push(sorted_List, cur->value);
+                    break;
+                }
+            }
+        }
+    }
+
+    //Retorna a nova lista ordenada
+    return sorted_List;
+}

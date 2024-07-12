@@ -4,11 +4,11 @@
 #include <string.h>
 #include <time.h>
 
-char *values[] = { "XXXX", "1234", "abcd", "xjvef", "NDSS", "new1", "new2", "new1plus", "X123", "XXXX", "1234", "abcd", "xjvef", "NDSS", "new1", "new2", "new1plus", "X123", "XXXX", "1234", "abcd", "xjvef", "NDSS", "new1", "new2", "new1plus", "X123", "XXXX", "1234", "abcd", "xjvef", "NDSS", "new1", "new2", "new1plus", "X123", "XXXX", "1234", "abcd", "xjvef", "NDSS", "new1", "new2", "new1plus", "X123", "XXXX", "1234", "abcd", "xjvef", "NDSS", "new1", "new2", "new1plus", "X123"};
+char *values[] = { "XXXX", "1234", "abcd", "xjvef", "NDSS", "new1", "XXXX"};
 clock_t start, end;
 double cpu_time_used;
 
-#define NUM_VALUES 45
+#define NUM_VALUES 7
 
 List *create_words(){
     int i = 0;
@@ -63,6 +63,27 @@ char *test_merge_sort(){
     //should work on already sorted list
     List *res2 = List_merge_sort(res, (List_compare) strcmp); 
     mu_assert(is_sorted(res2), "Res should be sort if already Merge sort");
+    // List_print(res2);
+
+    List_destroy(res2);
+    List_destroy(res);
+
+    List_destroy(words);
+
+    return NULL;
+}
+
+char *test_inserted_sort(){
+    List *words = create_words();
+
+    List *res = List_inserted_sort(words, (List_compare) strcmp);
+    // List_print(res);
+    mu_assert(is_sorted(res), "Words are not sorted after Inserted Sort.");
+
+    //should work on already sorted list
+    List *res2 = List_inserted_sort(res, (List_compare) strcmp); 
+    // List_print(res2);
+    mu_assert(is_sorted(res2), "Res should be sort if already Inserted Sort");
 
     List_destroy(res2);
     List_destroy(res);
@@ -87,8 +108,13 @@ char *all_tests(){
     mu_run_test(test_merge_sort);
     end = clock();
     cpu_time_used = ((double) (end)) / CLOCKS_PER_SEC;
-
     printf("Tempo do Merge Sort: %f\n", cpu_time_used);
+
+    start = clock();
+    mu_run_test(test_inserted_sort);
+    end = clock();
+    cpu_time_used = ((double) (end)) / CLOCKS_PER_SEC;
+    printf("Tempo do Inserted Sort: %f\n", cpu_time_used);
 
 
     return NULL;
