@@ -81,14 +81,14 @@ char *all_tests(){
     mu_run_test(test_bubble_sort);
     end = clock();
     cpu_time_used = ((double) (end)) / CLOCKS_PER_SEC;
-    printf("%f\n", cpu_time_used);
+    printf("Tempo do Bubble Sort: %f\n", cpu_time_used);
 
     start = clock();
     mu_run_test(test_merge_sort);
     end = clock();
     cpu_time_used = ((double) (end)) / CLOCKS_PER_SEC;
 
-    printf("%f\n", cpu_time_used);
+    printf("Tempo do Merge Sort: %f\n", cpu_time_used);
 
 
     return NULL;

@@ -49,7 +49,6 @@ List *List_merge(List *left, List *right, List_compare cmp){
 
             //Result recebe o menor valor entre o primeiro elemento de left e o primeiro elemento de right
             List_push(result, val);
-
         } 
         //Se sobrar algum valor em left...
         else if (List_count(left) > 0){
@@ -79,6 +78,18 @@ List *List_merge_sort(List *list, List_compare cmp){
 
     //Divide a lista main em esquerda e direita, pelo meio
     List_split(list, left, right, (List_count(list)/2));
+
+    //Zed's method
+    /*int middle =  List_count(list)/2;
+    LIST_FOREACH(list, first, next, cur){
+        if(middle > 0) {
+            List_push(left, cur->value);
+        } else {
+            List_push(right, cur->value);
+        }
+
+        middle--;
+    }*/
 
     //Faz isso recursivamente até que haja apenas 1 elemento na lista
     List *sort_left = List_merge_sort(left, cmp);
