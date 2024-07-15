@@ -156,22 +156,10 @@ List *List_inserted_sort(List *list, List_compare cmp){
         else {
             //Para cada elemento inserido na nova lista
             LIST_FOREACH(sorted_List, first, next, sorted_Cur){
-                //Se o próximo não for nulo
-                if(sorted_Cur->next != NULL){
-                    //Compara se o próximo valor é maior que o valor para ser inserido
-                    if(cmp(sorted_Cur->next->value, cur->value) >= 0){
-                        //Se sim, insere uma posição antes dele
-                        List_insert(sorted_List, sorted_Cur, cur->value);
-                        //Quebra o looping
-                        break;
-                    }
-                }
-                else if(cmp(sorted_List->first->value, cur->value) >= 0){
-                    List_unshift(sorted_List, cur->value);
-                }
-                //Se o próximo for nulo é porque é o maior valor 
-                else {
-                    List_push(sorted_List, cur->value);
+                if(cmp(sorted_Cur->value, cur->value) >= 0){
+                    //Se sim, insere uma posição antes dele
+                    List_insert(sorted_List, sorted_Cur->prev, cur->value);
+                    //Quebra o looping
                     break;
                 }
             }
@@ -179,25 +167,6 @@ List *List_inserted_sort(List *list, List_compare cmp){
     }
 
     //Retorna a nova lista ordenada
-    return sorted_List;
-}
-
-List *List_bottom_up_merge_sort(List *list, List_compare cmp){
-    int size = List_count(list);
-    int width = 1;
-    int i = 0;
-
-    List *sorted_List = List_create();
-
-    for(width = 1; width < size; width = 2 * width){
-        for(i = 0; i < size; i = i + 2 *width){
-            List_bottom_up_merge(list, i, min(i+width, size), min(i+2*width, size), sorted_List, cmp);
-            printf("%d %d %d %d\n", i, min(i+width, size), min(i+2*width, size), size);
-        }
-
-        List_copy(list, sorted_List);
-    }
-
     return sorted_List;
 }
 
@@ -209,26 +178,43 @@ ListNode *Node_jump(ListNode *node, int jumps){
             node = node->next;
         }
     }
-
+    printf("Valor do nó: %s\n", (char *)node->value);
     return node;
 }
 
-void List_bottom_up_merge(List *list, int left, int right, int end, List *sorted_List, List_compare cmp){
+List *List_bottom_up_merge_sort(List *list, List_compare cmp){
+    int size = List_count(list);
+    int width = 1;
+    int i = 0;
+
+    List *sorted_List = List_create();
+
+    for(width = 1; width < 1; width *= 2){
+        for(i = 0; i < size; i = i + 2 * width){
+            List_bottom_up_merge(list, i, min(i+width, size), min(i+(2*width), size), sorted_List, cmp);
+            printf("%d %d %d %d\n", width, min(i+width, size), min(i+(2*width), size), size);
+        }
+        
+        List_print(sorted_List);
+    }
+
+    return sorted_List;
+}
+
+void List_bottom_up_merge(List *list, int left, int right, int end, List *sorted_List, List_compare cmp) {
     int i = left;
     int j = right;
-    ListNode *leftNode = list->first;
+    ListNode *leftNode = Node_jump(list->first, left);
     ListNode *rightNode = Node_jump(list->first, right);
-    List_print(sorted_List);
-
-
-
-    LIST_FOREACH(list, first, next, cur){
-        if(i < right && (j >= end || cmp(Node_jump(leftNode, i)->value, Node_jump(rightNode, j)->value))){
-            List_push(sorted_List, Node_jump(leftNode, i)->value);
-        printf("TESTE TESTE TESTE\n");  
+    
+    while (i < right || j < end) {
+        if (i < right && (j >= end || cmp(leftNode->value, rightNode->value) <= 0)) {
+            List_push(sorted_List, leftNode->value);
+            leftNode = leftNode->next;
             i++;
         } else {
-            List_push(sorted_List, Node_jump(leftNode, j)->value);
+            List_push(sorted_List, rightNode->value);
+            rightNode = rightNode->next;
             j++;
         }
     }

@@ -4,11 +4,11 @@
 #include <string.h>
 #include <time.h>
 
-char *values[] = { "XXXX", "1234", "abcd", "xjvef", "NDSS", "new1", "XXXX"};
+char *values[] = { "XXXX", "1234", "abcd", "xjvef", "NDSS", "new1", "XXXX", "wow", "xD", "121123"};
 clock_t start, end;
 double cpu_time_used;
 
-#define NUM_VALUES 7
+#define NUM_VALUES 10
 
 List *create_words(){
     int i = 0;
@@ -22,11 +22,11 @@ List *create_words(){
 }
 
 int is_sorted(List *words){
-    /*printf("PRINTANDO LISTA:\n");
-    List_print(words);*/
+    printf("PRINTANDO LISTA:\n");
+    List_print(words);
     LIST_FOREACH(words, first, next, cur){
         if(cur->next && strcmp(cur->value, cur->next->value) > 0) {
-            debug("%s %s", (char *)cur->value, (char *)cur->next->value);
+            debug("%s %s %d", (char *)cur->value, (char *)cur->next->value, strcmp(cur->value, cur->next->value));
             return 0;
         }
     }
@@ -98,7 +98,7 @@ char *test_inserted_sort(){
     List *words = create_words();
 
     List *res = List_inserted_sort(words, (List_compare) strcmp);
-    // List_print(res);
+    List_print(res);
     mu_assert(is_sorted(res), "Words are not sorted after Inserted Sort.");
 
     //should work on already sorted list
