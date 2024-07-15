@@ -4,7 +4,7 @@
 #include <string.h>
 #include <time.h>
 
-char *values[] = { "XXXX", "1234","xjvef", "abcd", "NDSS", "new1", "XXXX", "wow", "xD", "121123"};
+char *values[] = { "XXXX", "1234", "abcd", "xjvef", "NDSS", "new1", "XXXX", "wow", "xD", "121123"};
 clock_t start, end;
 double cpu_time_used;
 
@@ -47,9 +47,6 @@ char *test_bubble_sort(){
     mu_assert(rc == 0, "Bubble sort of already sorted failed.");
     mu_assert(is_sorted(words), "Words should be sort if already bubble sort");
 
-    printf("\nBUBBLE SORT:\n");
-    List_print(words);
-
     List_destroy(words);
 
     return NULL;
@@ -66,9 +63,7 @@ char *test_merge_sort(){
     //should work on already sorted list
     List *res2 = List_merge_sort(res, (List_compare) strcmp); 
     mu_assert(is_sorted(res2), "Res should be sort if already Merge sort");
-
-    printf("\nMERGE SORT:\n");
-    List_print(res2);
+    // List_print(res2);
 
     List_destroy(res2);
     List_destroy(res);
@@ -89,9 +84,10 @@ char *test_bottom_up_merge_sort(){
     //should work on already sorted list
     List *res2 = List_bottom_up_merge_sort(res, (List_compare) strcmp); 
     mu_assert(is_sorted(res2), "Res should be sort if already Bottom Up Merge sort");
+    // List_print(res2);
 
-    printf("\nBOTTOM UP MERGE SORT\n");
-    List_print(res2);
+    List_destroy(res2);
+    List_destroy(res);
 
     List_destroy(words);
 
@@ -109,9 +105,6 @@ char *test_inserted_sort(){
     List *res2 = List_inserted_sort(res, (List_compare) strcmp); 
     // List_print(res2);
     mu_assert(is_sorted(res2), "Res should be sort if already Inserted Sort");
-
-    printf("\nINSERTED SORT:\n");
-    List_print(res2);
 
     List_destroy(res2);
     List_destroy(res);

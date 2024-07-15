@@ -1,11 +1,15 @@
-DEBUG tests/list_algos_tests.c:157: ----- RUNNING: ./tests/list_algos_tests
-DEBUG tests/list_algos_tests.c:130: 
+DEBUG tests/list_algos_tests.c:150: ----- RUNNING: ./tests/list_algos_tests
+DEBUG tests/list_algos_tests.c:123: 
 ----- test_bubble_sort
-DEBUG tests/list_algos_tests.c:136: 
+DEBUG tests/list_algos_tests.c:129: 
 ----- test_merge_sort
-DEBUG tests/list_algos_tests.c:142: 
+DEBUG tests/list_algos_tests.c:135: 
 ----- test_inserted_sort
-DEBUG tests/list_algos_tests.c:148: 
+[ERROR] (src/lcthw/list_algos.c:120: errno: None in List_insert function) Out of Memory.
+[ERROR] (src/lcthw/list_algos.c:120: errno: None in List_insert function) Out of Memory.
+[ERROR] (src/lcthw/list_algos.c:120: errno: None in List_insert function) Out of Memory.
+[ERROR] (src/lcthw/list_algos.c:120: errno: None in List_insert function) Out of Memory.
+DEBUG tests/list_algos_tests.c:141: 
 ----- test_bottom_up_merge_sort
 DEBUG tests/list_tests.c:164: ----- RUNNING: ./tests/list_tests
 DEBUG tests/list_tests.c:151: 
