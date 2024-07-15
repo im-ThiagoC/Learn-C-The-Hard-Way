@@ -18,16 +18,11 @@ void List_destroy(List *list){
 }
 
 void List_clear(List *list){
-    ListNode* current = list->first;
-    ListNode* nextNode;
-
-    while (current != NULL) {
-        nextNode = current->next;
-        free(current);
-        current = nextNode;
+    int i = 0;
+    int size = List_count(list);
+    for(i = 0; i < size; i++){
+        List_pop(list);
     }
-
-    list->count = 0;
 }
 
 void List_clear_destroy(List *list){
@@ -124,10 +119,17 @@ void *List_remove(List *list, ListNode *node) {
 //Copia os elementos da lista 2 para lista 1
 void List_copy(List *list1, List *list2) {
     List_clear(list1);
+    //printf("LISTA DEPOIS DE LIMPAR:\n");
+    //List_print(list1);
 
-    LIST_FOREACH(list2, first, next, cur){
-        List_push(list1, cur->value);
+    if(list2->first != NULL){
+        LIST_FOREACH(list2, first, next, cur){
+            List_push(list1, cur->value);
+        }
     }
+    
+    //printf("LISTA DEPOIS DA COPIA\n");
+    //List_print(list1);
 }
 
 //Salva todos elementos da lista 2 na lista 1

@@ -102,7 +102,7 @@ char *test_inserted_sort(){
     List *words = create_words();
 
     List *res = List_inserted_sort(words, (List_compare) strcmp);
-    List_print(res);
+    //List_print(res);
     mu_assert(is_sorted(res), "Words are not sorted after Inserted Sort.");
 
     //should work on already sorted list

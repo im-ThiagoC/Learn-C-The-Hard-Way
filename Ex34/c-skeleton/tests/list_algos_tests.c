@@ -4,7 +4,7 @@
 #include <string.h>
 #include <time.h>
 
-char *values[] = { "XXXX", "1234", "abcd", "xjvef", "NDSS", "new1", "XXXX", "wow", "xD", "121123"};
+char *values[] = { "XXXX", "1234","xjvef", "abcd", "NDSS", "new1", "XXXX", "wow", "xD", "121123"};
 clock_t start, end;
 double cpu_time_used;
 
@@ -47,6 +47,9 @@ char *test_bubble_sort(){
     mu_assert(rc == 0, "Bubble sort of already sorted failed.");
     mu_assert(is_sorted(words), "Words should be sort if already bubble sort");
 
+    printf("\nBUBBLE SORT:\n");
+    List_print(words);
+
     List_destroy(words);
 
     return NULL;
@@ -63,7 +66,9 @@ char *test_merge_sort(){
     //should work on already sorted list
     List *res2 = List_merge_sort(res, (List_compare) strcmp); 
     mu_assert(is_sorted(res2), "Res should be sort if already Merge sort");
-    // List_print(res2);
+
+    printf("\nMERGE SORT:\n");
+    List_print(res2);
 
     List_destroy(res2);
     List_destroy(res);
@@ -78,16 +83,14 @@ char *test_bottom_up_merge_sort(){
 
     //should work on a list that need sorting
     List *res = List_bottom_up_merge_sort(words, (List_compare) strcmp);
-    List_print(res);
     mu_assert(is_sorted(res), "Words are not sorted after Bottom Up Merge sort.");
 
     //should work on already sorted list
     List *res2 = List_bottom_up_merge_sort(res, (List_compare) strcmp); 
     mu_assert(is_sorted(res2), "Res should be sort if already Bottom Up Merge sort");
-    // List_print(res2);
 
-    List_destroy(res2);
-    List_destroy(res);
+    printf("\nBOTTOM UP MERGE SORT\n");
+    List_print(res2);
 
     List_destroy(words);
 
@@ -98,13 +101,15 @@ char *test_inserted_sort(){
     List *words = create_words();
 
     List *res = List_inserted_sort(words, (List_compare) strcmp);
-    List_print(res);
     mu_assert(is_sorted(res), "Words are not sorted after Inserted Sort.");
 
     //should work on already sorted list
     List *res2 = List_inserted_sort(res, (List_compare) strcmp); 
     // List_print(res2);
     mu_assert(is_sorted(res2), "Res should be sort if already Inserted Sort");
+
+    printf("\nINSERTED SORT:\n");
+    List_print(res2);
 
     List_destroy(res2);
     List_destroy(res);
@@ -141,7 +146,7 @@ char *all_tests(){
     mu_run_test(test_bottom_up_merge_sort);
     end = clock();
     cpu_time_used = ((double) (end)) / CLOCKS_PER_SEC;
-    printf("Tempo do Bottom Up Merge Sort: %f\n", cpu_time_used);
+    printf("Tempo do Bottom Up Merge Sort: %f\n\n", cpu_time_used);
 
 
     return NULL;

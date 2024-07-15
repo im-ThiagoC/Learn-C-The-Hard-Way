@@ -192,7 +192,7 @@ ListNode *Node_jump(ListNode *node, int jumps){
             node = node->next;
         }
     }
-    printf("Valor do nó: %s\n", (char *)node->value);
+    //printf("Valor do nó: %s\n", (char *)node->value);
     return node;
 }
 
@@ -206,16 +206,16 @@ void List_bottom_up_merge(List *list, int left, int right, int end, List *sorted
         leftNode = Node_jump(list->first, i);
         rightNode = Node_jump(list->first, j);
         if(i < right && strcmp(leftNode->value, rightNode->value) < 0){
-            printf("Adicionando %s na lista porque eh maior que %s\n", (char *)leftNode->value, (char *)rightNode->value);
+            //printf("Adicionando %s na lista porque eh maior que %s\n", (char *)leftNode->value, (char *)rightNode->value);
             List_push(sorted_List, leftNode->value);
             i++;
         }
         else if(j < end){
-            printf("Adicionando %s na lista porque eh menor que %s\n", (char *)rightNode->value, (char *)leftNode->value);
+            //printf("Adicionando %s na lista porque eh menor que %s\n", (char *)rightNode->value, (char *)leftNode->value);
             List_push(sorted_List, rightNode->value);
             j++;
         } else if (i < end){
-            printf("Adicionando %s na lista porque sobrou", (char *)leftNode->value);
+            //printf("Adicionando %s na lista porque sobrou", (char *)leftNode->value);
             List_push(sorted_List, leftNode->value);
             i++;
         }
@@ -232,7 +232,7 @@ List *List_bottom_up_merge_sort(List *list, List_compare cmp) {
 
     for (width = 1; width < size; width = 2 * width) {
         for (int i = 0; i < size; i = i + 2 * width) {
-            printf("VALORES: %d %d %d\n", i, min(i + width, size), min(i + 2 * width, size));
+            //printf("VALORES: %d %d %d\n", i, min(i + width, size), min(i + 2 * width, size));
             List_bottom_up_merge(list, i, min(i + width, size), min(i + 2 * width, size), sorted_List, cmp);
         }
 
