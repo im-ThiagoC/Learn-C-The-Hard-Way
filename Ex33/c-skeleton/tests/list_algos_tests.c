@@ -22,8 +22,8 @@ List *create_words(){
 }
 
 int is_sorted(List *words){
-    printf("PRINTANDO LISTA:\n");
-    List_print(words);
+    /*printf("PRINTANDO LISTA:\n");
+    List_print(words);*/
     LIST_FOREACH(words, first, next, cur){
         if(cur->next && strcmp(cur->value, cur->next->value) > 0) {
             debug("%s %s %d", (char *)cur->value, (char *)cur->next->value, strcmp(cur->value, cur->next->value));

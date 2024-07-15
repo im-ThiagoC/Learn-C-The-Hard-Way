@@ -170,6 +170,7 @@ List *List_inserted_sort(List *list, List_compare cmp){
     return sorted_List;
 }
 
+//Retorna o nó depois de jumps pulos
 ListNode *Node_jump(ListNode *node, int jumps){
     int i = 0;
 
@@ -178,7 +179,7 @@ ListNode *Node_jump(ListNode *node, int jumps){
             node = node->next;
         }
     }
-    printf("Valor do nó: %s\n", (char *)node->value);
+    //printf("Valor do nó: %s\n", (char *)node->value);
     return node;
 }
 
@@ -187,12 +188,22 @@ List *List_bottom_up_merge_sort(List *list, List_compare cmp){
     int width = 1;
     int i = 0;
 
+    //Cria uma nova lista para salvar os valores ordenados
     List *sorted_List = List_create();
 
+    //Por algum motivo só funciona com width < 1
     for(width = 1; width < 1; width *= 2){
+        //Para i = 0, 2, 4, 8...
         for(i = 0; i < size; i = i + 2 * width){
+            /*
+            * List = Lista inicial
+            * i = contador que segue a exponenciação de 2 para limitar o inicio da lista left
+            * min(i + width, size) = pega o mínimo entre o size e o width + i para limitar o fim da lista left e inicio da right
+            * min(i+(2*width), size) = limita o fim da lista right
+            * sorted_List = Salva os valores na lista final
+            * cmp = Método comparador, nesse caso, strcmp
+            */
             List_bottom_up_merge(list, i, min(i+width, size), min(i+(2*width), size), sorted_List, cmp);
-            printf("%d %d %d %d\n", width, min(i+width, size), min(i+(2*width), size), size);
         }
         
         List_print(sorted_List);
@@ -204,17 +215,29 @@ List *List_bottom_up_merge_sort(List *list, List_compare cmp){
 void List_bottom_up_merge(List *list, int left, int right, int end, List *sorted_List, List_compare cmp) {
     int i = left;
     int j = right;
+    //Nó auxiliar para o inicio da lista left
     ListNode *leftNode = Node_jump(list->first, left);
+    //Nó auxiliar para o inicio da lista right
     ListNode *rightNode = Node_jump(list->first, right);
     
+    //Enquanto o i for menor que right (Elementos da lista left)
+    //Enquanto o j for menor que end (Elementos da lista right)
     while (i < right || j < end) {
+        //Se (Elementos da lista left) E (Elementos da Lista Right acabaram OU o valor de nó atual right for menor que o nó atual de left)
         if (i < right && (j >= end || cmp(leftNode->value, rightNode->value) <= 0)) {
+            //Insere na lista ordenada o valor atual de Left
             List_push(sorted_List, leftNode->value);
+            //Próximo nó da lista Left
             leftNode = leftNode->next;
+            //Incrementa o I
             i++;
-        } else {
+        }
+        //Senão, incrementa na lista ordenada o valor de right
+        else {
             List_push(sorted_List, rightNode->value);
+            //Próximo nó da lista Right
             rightNode = rightNode->next;
+            //E incrementa o J
             j++;
         }
     }
