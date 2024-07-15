@@ -73,6 +73,27 @@ char *test_merge_sort(){
     return NULL;
 }
 
+char *test_bottom_up_merge_sort(){
+    List *words = create_words();
+
+    //should work on a list that need sorting
+    List *res = List_bottom_up_merge_sort(words, (List_compare) strcmp);
+    List_print(res);
+    mu_assert(is_sorted(res), "Words are not sorted after Bottom Up Merge sort.");
+
+    //should work on already sorted list
+    List *res2 = List_bottom_up_merge_sort(res, (List_compare) strcmp); 
+    mu_assert(is_sorted(res2), "Res should be sort if already Bottom Up Merge sort");
+    // List_print(res2);
+
+    List_destroy(res2);
+    List_destroy(res);
+
+    List_destroy(words);
+
+    return NULL;
+}
+
 char *test_inserted_sort(){
     List *words = create_words();
 
@@ -115,6 +136,12 @@ char *all_tests(){
     end = clock();
     cpu_time_used = ((double) (end)) / CLOCKS_PER_SEC;
     printf("Tempo do Inserted Sort: %f\n", cpu_time_used);
+
+    start = clock();
+    mu_run_test(test_bottom_up_merge_sort);
+    end = clock();
+    cpu_time_used = ((double) (end)) / CLOCKS_PER_SEC;
+    printf("Tempo do Bottom Up Merge Sort: %f\n", cpu_time_used);
 
 
     return NULL;

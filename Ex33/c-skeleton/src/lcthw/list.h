@@ -72,5 +72,13 @@ void List_print(List *list);
 //Remove todos valores de uma lista
 void List_remove_all(List *list);
 
+#define max(a, b) \
+    ({ __typeof__ (a) _a = (a); \
+        __typeof__ (b) _b = (b); \
+        _a > _b ? _a : _b; })
 
+#define min(a, b) \
+    ({ __typeof__ (a) _a = (a); \
+        __typeof__ (b) _b = (b); \
+        _a < _b ? _a : _b; })
 #endif
