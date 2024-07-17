@@ -63,7 +63,7 @@ void List_copy(List *list1, List *list2);
 void List_join(List *list1, List *list2);
 
 //Parte a lista em determinado ponto e separa em duas listas distintas
-void *List_split(List *main, List *list1, List *list2, int index);
+void *List_split(List *list1, List *list2, int index);
 
 //Imprime todos elementos da lista
 void List_print(List *list);

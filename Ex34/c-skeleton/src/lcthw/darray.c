@@ -17,13 +17,14 @@ DArray *DArray_create(size_t element_size, size_t initial_max){
     return array;
 
     error:
-        if(array)
-            free(array);
+        DArray_destroy(array);
         return NULL;
 }
 
 void DArray_clear(DArray *array){
+    check(array != NULL, "Invalid array to clear.");
     int i = 0;
+
     if(array->element_size > 0){
         for(i = 0; i < array->max; i++){
             if(array->contents[i] != NULL){
@@ -31,9 +32,13 @@ void DArray_clear(DArray *array){
             }
         }
     }
+
+    error:
+        return;
 }
 
 static inline int DArray_resize(DArray *array, size_t newsize){
+    check(array != NULL, "Invalid array to resize.");
     array->max = newsize;
     check(array->max > 0, "The newsize must be > 0.");
 
@@ -50,6 +55,7 @@ static inline int DArray_resize(DArray *array, size_t newsize){
 }
 
 int DArray_expand(DArray *array){
+    check(array != NULL, "Invalid array to expand.");
     size_t old_max = array->max;
     check(DArray_resize(array, array->max + array->expand_rate) == 0, "Failed to expand array to new size: %d", array->max + (int)array->expand_rate);
 
@@ -61,18 +67,25 @@ int DArray_expand(DArray *array){
 }
 
 int DArray_contract(DArray *array){
+    check(array != NULL, "Invalid array to contract.");
     int new_size = array->end < (int)array->expand_rate ? (int)array->expand_rate : array->end;
 
     return DArray_resize(array, new_size + 1);
+    error:
+        return -1;
 }
 
 void DArray_destroy(DArray *array){
+    check(array != NULL, "Invalid array to destroy.");
     if(array){
         if(array->contents){
             free(array->contents);
         }
         free(array);
     }
+
+    error:
+        return;
 }
 
 void DArray_clean_destroy(DArray *array){
@@ -81,6 +94,9 @@ void DArray_clean_destroy(DArray *array){
 }
 
 int DArray_push(DArray *array, void *value){
+    check(array != NULL, "Invalid array to push.");
+    check(value != NULL, "Value can't be NULL");
+
     array->contents[array->end] = value;
     array->end++;
 
@@ -89,9 +105,13 @@ int DArray_push(DArray *array, void *value){
     } else {
         return 0;
     }
+
+    error:
+        return -1;
 }
 
 void *DArray_pop(DArray *array){
+    check(array != NULL, "Invalid array to pop.");
     check(array->end - 1 >= 0, "Attempt to pop empty array.");
 
     void *value = DArray_remove(array, array->end - 1);

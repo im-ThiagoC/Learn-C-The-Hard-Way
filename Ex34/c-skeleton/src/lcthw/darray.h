@@ -31,6 +31,7 @@ void DArray_clear_destroy(DArray *array);
 #define DEFAULT_EXPAND_RATE 300
 
 static inline void DArray_set(DArray *array, int i, void *value){
+    check(array != NULL, "Invalid array to set");
     check(i < array->max, "DArray attempt to set past max");
     if(i > array->end){
         array->end = i;
@@ -44,6 +45,7 @@ static inline void DArray_set(DArray *array, int i, void *value){
 }
 
 static inline void *DArray_get(DArray *array, int i){
+    check(array != NULL, "Invalid array to get");
     check(i < array->max, "DArray attempt to get past max");
     return array->contents[i];
     error:
@@ -51,14 +53,19 @@ static inline void *DArray_get(DArray *array, int i){
 }
 
 static inline void *DArray_remove(DArray *array, int i){
+    check(array != NULL, "Invalid array to remove");
     void *value = array->contents[i];
 
     array->contents[i] = NULL;
 
     return value;
+
+    error:
+        return NULL;
 }
 
 static inline void *DArray_new(DArray *array){
+    check(array != NULL, "Invalid array to create new");
     check(array->element_size > 0, "Can't use DArray_new on 0 size DArrays");
 
     return calloc(1, array->element_size);

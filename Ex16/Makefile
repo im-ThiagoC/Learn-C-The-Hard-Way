@@ -1,5 +1,4 @@
 CFLAGS=-Wall -g
-CC = "C:\MinGW\bin\gcc.exe"
 
 all: ex16
 

@@ -10,6 +10,15 @@ struct Person {
     int weight;
 };
 
+char *strdup(const char *s) {
+    size_t size = strlen(s) + 1;
+    char *p = malloc(size);
+    if (p) {
+        memcpy(p, s, size);
+    }
+    return p;
+}
+
 struct Person *Person_create(char* name, int age, int height, int weight){
     struct Person *who = malloc(sizeof(struct Person));
     assert(who != NULL);

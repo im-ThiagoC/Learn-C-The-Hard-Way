@@ -125,28 +125,30 @@ char *all_tests(){
     mu_suite_start();
 
     start = clock();
+    mu_run_test(test_bottom_up_merge_sort);
+    end = clock();
+    cpu_time_used = ((double) (end) - start) / CLOCKS_PER_SEC;
+    printf("Tempo do Bottom Up Merge Sort: %f\n\n", cpu_time_used);
+
+    start = clock();
     mu_run_test(test_bubble_sort);
     end = clock();
-    cpu_time_used = ((double) (end)) / CLOCKS_PER_SEC;
+    cpu_time_used = ((double) (end) - start) / CLOCKS_PER_SEC;
     printf("Tempo do Bubble Sort: %f\n", cpu_time_used);
 
     start = clock();
     mu_run_test(test_merge_sort);
     end = clock();
-    cpu_time_used = ((double) (end)) / CLOCKS_PER_SEC;
+    cpu_time_used = ((double) (end) - start) / CLOCKS_PER_SEC;
     printf("Tempo do Merge Sort: %f\n", cpu_time_used);
 
     start = clock();
     mu_run_test(test_inserted_sort);
     end = clock();
-    cpu_time_used = ((double) (end)) / CLOCKS_PER_SEC;
+    cpu_time_used = ((double) (end) - start) / CLOCKS_PER_SEC;
     printf("Tempo do Inserted Sort: %f\n", cpu_time_used);
 
-    start = clock();
-    mu_run_test(test_bottom_up_merge_sort);
-    end = clock();
-    cpu_time_used = ((double) (end)) / CLOCKS_PER_SEC;
-    printf("Tempo do Bottom Up Merge Sort: %f\n\n", cpu_time_used);
+    
 
 
     return NULL;
