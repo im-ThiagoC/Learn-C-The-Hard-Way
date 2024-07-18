@@ -15,15 +15,23 @@
         "utility": "c",
         "type_traits": "c",
         "xtr1common": "c",
-        "list_algos.h": "c"
+        "list_algos.h": "c",
+        "stdlib.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled",
-    "C_Cpp.default.compilerPath": "/usr/bin/gcc-11",
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc",
     "C_Cpp.intelliSenseEngineFallback": "disabled",
     "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
     "C_Cpp.intelliSenseEngine": "Tag Parser",
     "C_Cpp.codeAnalysis.clangTidy.enabled": true,
     "C_Cpp.codeAnalysis.clangTidy.checks.disabled": [
-        "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling"
+        "clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+        "clang-diagnostic-incompatible-function-pointer-types",
+        "clang-diagnostic-incompatible-function-pointer-types",
+        "clang-diagnostic-incompatible-pointer-types-discards-qualifiers",
+        "clang-diagnostic-incompatible-function-pointer-types",
+        "clang-diagnostic-incompatible-function-pointer-types",
+        "clang-diagnostic-incompatible-function-pointer-types",
+        "clang-diagnostic-incompatible-function-pointer-types"
     ]
 }

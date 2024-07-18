@@ -1,200 +1,224 @@
-DEBUG tests/darray_tests.c:117: ----- RUNNING: ./tests/darray_tests
-DEBUG tests/darray_tests.c:105: 
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
 ----- test_create
-DEBUG tests/darray_tests.c:106: 
+DEBUG tests/darray_tests.c:169: 
 ----- test_new
-DEBUG tests/darray_tests.c:107: 
+DEBUG tests/darray_tests.c:170: 
 ----- test_set
-DEBUG tests/darray_tests.c:108: 
+DEBUG tests/darray_tests.c:171: 
 ----- test_get
-DEBUG tests/darray_tests.c:109: 
------ test_remove
-DEBUG tests/darray_tests.c:110: 
------ test_expand_contract
-DEBUG tests/darray_tests.c:111: 
------ test_push_pop
-DEBUG tests/darray_tests.c:112: 
------ test_destroy
-DEBUG tests/list_algos_tests.c:155: ----- RUNNING: ./tests/list_algos_tests
-DEBUG tests/list_algos_tests.c:128: 
------ test_bubble_sort
-DEBUG tests/list_algos_tests.c:134: 
------ test_merge_sort
-DEBUG tests/list_algos_tests.c:140: 
------ test_inserted_sort
-DEBUG tests/list_algos_tests.c:146: 
------ test_bottom_up_merge_sort
-DEBUG tests/list_tests.c:164: ----- RUNNING: ./tests/list_tests
-DEBUG tests/list_tests.c:151: 
+[ERROR] (tests/darray_tests.c:56: errno: None in test_get function) Wrong third value.
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
 ----- test_create
-DEBUG tests/list_tests.c:152: 
------ test_push_pop
-DEBUG tests/list_tests.c:153: 
------ test_unshift
-DEBUG tests/list_tests.c:154: 
------ test_remove
-DEBUG tests/list_tests.c:155: 
------ test_shift
-DEBUG tests/list_tests.c:156: 
------ test_copy
-DEBUG tests/list_tests.c:157: 
------ test_join
-DEBUG tests/list_tests.c:158: 
------ test_split
-DEBUG tests/list_tests.c:159: 
------ test_destroy
-DEBUG tests/darray_tests.c:117: ----- RUNNING: ./tests/darray_tests
-DEBUG tests/darray_tests.c:105: 
------ test_create
-DEBUG tests/darray_tests.c:106: 
+DEBUG tests/darray_tests.c:169: 
 ----- test_new
-DEBUG tests/darray_tests.c:107: 
+DEBUG tests/darray_tests.c:170: 
 ----- test_set
-DEBUG tests/darray_tests.c:108: 
------ test_get
-DEBUG tests/darray_tests.c:109: 
------ test_remove
-DEBUG tests/darray_tests.c:110: 
------ test_expand_contract
-DEBUG tests/darray_tests.c:111: 
------ test_push_pop
-DEBUG tests/darray_tests.c:112: 
------ test_destroy
-DEBUG tests/list_algos_tests.c:155: ----- RUNNING: ./tests/list_algos_tests
-DEBUG tests/list_algos_tests.c:128: 
------ test_bubble_sort
-DEBUG tests/list_algos_tests.c:134: 
------ test_merge_sort
-DEBUG tests/list_algos_tests.c:140: 
------ test_inserted_sort
-DEBUG tests/list_algos_tests.c:146: 
------ test_bottom_up_merge_sort
-DEBUG tests/list_tests.c:164: ----- RUNNING: ./tests/list_tests
-DEBUG tests/list_tests.c:151: 
+Segmentation fault
+DEBUG tests/darray_tests.c:194: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:170: 
 ----- test_create
-DEBUG tests/list_tests.c:152: 
------ test_push_pop
-DEBUG tests/list_tests.c:153: 
------ test_unshift
-DEBUG tests/list_tests.c:154: 
------ test_remove
-DEBUG tests/list_tests.c:155: 
------ test_shift
-DEBUG tests/list_tests.c:156: 
------ test_copy
-DEBUG tests/list_tests.c:157: 
------ test_join
-DEBUG tests/list_tests.c:158: 
------ test_split
-DEBUG tests/list_tests.c:159: 
------ test_destroy
-DEBUG tests/darray_tests.c:117: ----- RUNNING: ./tests/darray_tests
-DEBUG tests/darray_tests.c:105: 
------ test_create
-DEBUG tests/darray_tests.c:106: 
+DEBUG tests/darray_tests.c:171: 
 ----- test_new
-DEBUG tests/darray_tests.c:107: 
+DEBUG tests/darray_tests.c:172: 
 ----- test_set
-DEBUG tests/darray_tests.c:108: 
+DEBUG tests/darray_tests.c:173: 
 ----- test_get
-DEBUG tests/darray_tests.c:109: 
------ test_remove
-DEBUG tests/darray_tests.c:110: 
------ test_expand_contract
-DEBUG tests/darray_tests.c:111: 
------ test_push_pop
-DEBUG tests/darray_tests.c:112: 
------ test_destroy
-DEBUG tests/list_algos_tests.c:155: ----- RUNNING: ./tests/list_algos_tests
-DEBUG tests/list_algos_tests.c:128: 
------ test_bubble_sort
-DEBUG tests/list_algos_tests.c:134: 
------ test_merge_sort
-DEBUG tests/list_algos_tests.c:140: 
------ test_inserted_sort
-DEBUG tests/list_algos_tests.c:146: 
------ test_bottom_up_merge_sort
-DEBUG tests/list_tests.c:164: ----- RUNNING: ./tests/list_tests
-DEBUG tests/list_tests.c:151: 
+[ERROR] (tests/darray_tests.c:58: errno: None in test_get function) Wrong third value.
+DEBUG tests/darray_tests.c:191: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:167: 
 ----- test_create
-DEBUG tests/list_tests.c:152: 
------ test_push_pop
-DEBUG tests/list_tests.c:153: 
------ test_unshift
-DEBUG tests/list_tests.c:154: 
------ test_remove
-DEBUG tests/list_tests.c:155: 
------ test_shift
-DEBUG tests/list_tests.c:156: 
------ test_copy
-DEBUG tests/list_tests.c:157: 
------ test_join
-DEBUG tests/list_tests.c:158: 
------ test_split
-DEBUG tests/list_tests.c:159: 
------ test_destroy
-DEBUG tests/darray_tests.c:117: ----- RUNNING: ./tests/darray_tests
-DEBUG tests/darray_tests.c:105: 
------ test_create
-DEBUG tests/darray_tests.c:106: 
+DEBUG tests/darray_tests.c:168: 
 ----- test_new
-DEBUG tests/darray_tests.c:107: 
+DEBUG tests/darray_tests.c:169: 
 ----- test_set
-DEBUG tests/darray_tests.c:108: 
+DEBUG tests/darray_tests.c:170: 
 ----- test_get
-DEBUG tests/darray_tests.c:109: 
------ test_remove
-DEBUG tests/darray_tests.c:110: 
------ test_expand_contract
-DEBUG tests/darray_tests.c:111: 
------ test_push_pop
-DEBUG tests/darray_tests.c:112: 
------ test_destroy
-DEBUG tests/list_algos_tests.c:155: ----- RUNNING: ./tests/list_algos_tests
-DEBUG tests/list_algos_tests.c:128: 
------ test_bubble_sort
-DEBUG tests/list_algos_tests.c:134: 
------ test_merge_sort
-DEBUG tests/list_algos_tests.c:140: 
------ test_inserted_sort
-DEBUG tests/list_algos_tests.c:146: 
------ test_bottom_up_merge_sort
-DEBUG tests/list_tests.c:164: ----- RUNNING: ./tests/list_tests
-DEBUG tests/list_tests.c:151: 
+[ERROR] (tests/darray_tests.c:53: errno: None in test_get function) Wrong first value.
+DEBUG tests/darray_tests.c:191: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:167: 
 ----- test_create
-DEBUG tests/list_tests.c:152: 
------ test_push_pop
-DEBUG tests/list_tests.c:153: 
------ test_unshift
-DEBUG tests/list_tests.c:154: 
------ test_remove
-DEBUG tests/list_tests.c:155: 
------ test_shift
-DEBUG tests/list_tests.c:156: 
------ test_copy
-DEBUG tests/list_tests.c:157: 
------ test_join
-DEBUG tests/list_tests.c:158: 
------ test_split
-DEBUG tests/list_tests.c:159: 
------ test_destroy
-DEBUG tests/darray_tests.c:117: ----- RUNNING: ./tests/darray_tests
-DEBUG tests/darray_tests.c:105: 
------ test_create
-DEBUG tests/darray_tests.c:106: 
+DEBUG tests/darray_tests.c:168: 
 ----- test_new
-DEBUG tests/darray_tests.c:107: 
+DEBUG tests/darray_tests.c:169: 
 ----- test_set
-DEBUG tests/darray_tests.c:108: 
+DEBUG tests/darray_tests.c:170: 
 ----- test_get
-DEBUG tests/darray_tests.c:109: 
+[ERROR] (tests/darray_tests.c:53: errno: None in test_get function) Wrong first value.
+DEBUG tests/darray_tests.c:191: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:167: 
+----- test_create
+DEBUG tests/darray_tests.c:168: 
+----- test_new
+DEBUG tests/darray_tests.c:169: 
+----- test_set
+DEBUG tests/darray_tests.c:170: 
+----- test_get
+[ERROR] (tests/darray_tests.c:53: errno: None in test_get function) Wrong first value.
+DEBUG tests/darray_tests.c:191: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:167: 
+----- test_create
+DEBUG tests/darray_tests.c:168: 
+----- test_new
+DEBUG tests/darray_tests.c:169: 
+----- test_set
+DEBUG tests/darray_tests.c:170: 
+----- test_get
+[ERROR] (tests/darray_tests.c:53: errno: None in test_get function) Wrong first value.
+DEBUG tests/darray_tests.c:191: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:167: 
+----- test_create
+DEBUG tests/darray_tests.c:168: 
+----- test_new
+DEBUG tests/darray_tests.c:169: 
+----- test_set
+DEBUG tests/darray_tests.c:170: 
+----- test_get
+[ERROR] (tests/darray_tests.c:53: errno: None in test_get function) Wrong first value.
+DEBUG tests/darray_tests.c:191: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:167: 
+----- test_create
+DEBUG tests/darray_tests.c:168: 
+----- test_new
+DEBUG tests/darray_tests.c:169: 
+----- test_set
+DEBUG tests/darray_tests.c:170: 
+----- test_get
+[ERROR] (tests/darray_tests.c:53: errno: None in test_get function) Wrong first value.
+DEBUG tests/darray_tests.c:191: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:167: 
+----- test_create
+DEBUG tests/darray_tests.c:168: 
+----- test_new
+DEBUG tests/darray_tests.c:169: 
+----- test_set
+DEBUG tests/darray_tests.c:170: 
+----- test_get
+[ERROR] (tests/darray_tests.c:53: errno: None in test_get function) Wrong first value.
+DEBUG tests/darray_tests.c:191: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:167: 
+----- test_create
+DEBUG tests/darray_tests.c:168: 
+----- test_new
+DEBUG tests/darray_tests.c:169: 
+----- test_set
+DEBUG tests/darray_tests.c:170: 
+----- test_get
+[ERROR] (tests/darray_tests.c:53: errno: None in test_get function) Wrong first value.
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
+----- test_create
+DEBUG tests/darray_tests.c:169: 
+----- test_new
+DEBUG tests/darray_tests.c:170: 
+----- test_set
+DEBUG tests/darray_tests.c:171: 
+----- test_get
+[ERROR] (tests/darray_tests.c:56: errno: None in test_get function) Wrong third value.
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
+----- test_create
+DEBUG tests/darray_tests.c:169: 
+----- test_new
+DEBUG tests/darray_tests.c:170: 
+----- test_set
+DEBUG tests/darray_tests.c:171: 
+----- test_get
+[ERROR] (tests/darray_tests.c:56: errno: None in test_get function) Wrong third value.
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
+----- test_create
+DEBUG tests/darray_tests.c:169: 
+----- test_new
+DEBUG tests/darray_tests.c:170: 
+----- test_set
+DEBUG tests/darray_tests.c:171: 
+----- test_get
+[ERROR] (tests/darray_tests.c:55: errno: None in test_get function) Wrong second value.
+DEBUG tests/darray_tests.c:191: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:167: 
+----- test_create
+DEBUG tests/darray_tests.c:168: 
+----- test_new
+DEBUG tests/darray_tests.c:169: 
+----- test_set
+DEBUG tests/darray_tests.c:170: 
+----- test_get
+[ERROR] (tests/darray_tests.c:53: errno: None in test_get function) Wrong first value.
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
+----- test_create
+DEBUG tests/darray_tests.c:169: 
+----- test_new
+DEBUG tests/darray_tests.c:170: 
+----- test_set
+DEBUG tests/darray_tests.c:171: 
+----- test_get
+[ERROR] (tests/darray_tests.c:56: errno: None in test_get function) Wrong third value.
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
+----- test_create
+DEBUG tests/darray_tests.c:169: 
+----- test_new
+DEBUG tests/darray_tests.c:170: 
+----- test_set
+DEBUG tests/darray_tests.c:171: 
+----- test_get
+[ERROR] (tests/darray_tests.c:56: errno: None in test_get function) Wrong third value.
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
+----- test_create
+DEBUG tests/darray_tests.c:169: 
+----- test_new
+DEBUG tests/darray_tests.c:170: 
+----- test_set
+DEBUG tests/darray_tests.c:171: 
+----- test_get
+[ERROR] (tests/darray_tests.c:56: errno: None in test_get function) Wrong third value.
+DEBUG tests/darray_tests.c:189: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:165: 
+----- test_create
+DEBUG tests/darray_tests.c:166: 
+----- test_new
+DEBUG tests/darray_tests.c:167: 
+----- test_set
+DEBUG tests/darray_tests.c:168: 
+----- test_get
+[ERROR] (tests/darray_tests.c:53: errno: None in test_get function) Wrong third value.
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
+----- test_create
+DEBUG tests/darray_tests.c:169: 
+----- test_new
+DEBUG tests/darray_tests.c:170: 
+----- test_set
+DEBUG tests/darray_tests.c:171: 
+----- test_get
+[ERROR] (tests/darray_tests.c:56: errno: None in test_get function) Wrong third value.
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
+----- test_create
+DEBUG tests/darray_tests.c:169: 
+----- test_new
+DEBUG tests/darray_tests.c:170: 
+----- test_set
+DEBUG tests/darray_tests.c:171: 
+----- test_get
+DEBUG tests/darray_tests.c:172: 
 ----- test_remove
-DEBUG tests/darray_tests.c:110: 
+DEBUG tests/darray_tests.c:173: 
 ----- test_expand_contract
-DEBUG tests/darray_tests.c:111: 
+DEBUG tests/darray_tests.c:174: 
 ----- test_push_pop
-DEBUG tests/darray_tests.c:112: 
+DEBUG tests/darray_tests.c:175: 
 ----- test_destroy
+DEBUG tests/darray_tests.c:181: 
+----- test_create_list
+DEBUG tests/darray_tests.c:182: 
+----- test_push_pop_list
+DEBUG tests/darray_tests.c:183: 
+----- test_destroy_list
 DEBUG tests/list_algos_tests.c:157: ----- RUNNING: ./tests/list_algos_tests
 DEBUG tests/list_algos_tests.c:128: 
 ----- test_bottom_up_merge_sort
@@ -223,23 +247,29 @@ DEBUG tests/list_tests.c:158:
 ----- test_split
 DEBUG tests/list_tests.c:159: 
 ----- test_destroy
-DEBUG tests/darray_tests.c:117: ----- RUNNING: ./tests/darray_tests
-DEBUG tests/darray_tests.c:105: 
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
 ----- test_create
-DEBUG tests/darray_tests.c:106: 
+DEBUG tests/darray_tests.c:169: 
 ----- test_new
-DEBUG tests/darray_tests.c:107: 
+DEBUG tests/darray_tests.c:170: 
 ----- test_set
-DEBUG tests/darray_tests.c:108: 
+DEBUG tests/darray_tests.c:171: 
 ----- test_get
-DEBUG tests/darray_tests.c:109: 
+DEBUG tests/darray_tests.c:172: 
 ----- test_remove
-DEBUG tests/darray_tests.c:110: 
+DEBUG tests/darray_tests.c:173: 
 ----- test_expand_contract
-DEBUG tests/darray_tests.c:111: 
+DEBUG tests/darray_tests.c:174: 
 ----- test_push_pop
-DEBUG tests/darray_tests.c:112: 
+DEBUG tests/darray_tests.c:175: 
 ----- test_destroy
+DEBUG tests/darray_tests.c:181: 
+----- test_create_list
+DEBUG tests/darray_tests.c:182: 
+----- test_push_pop_list
+DEBUG tests/darray_tests.c:183: 
+----- test_destroy_list
 DEBUG tests/list_algos_tests.c:157: ----- RUNNING: ./tests/list_algos_tests
 DEBUG tests/list_algos_tests.c:128: 
 ----- test_bottom_up_merge_sort
@@ -268,23 +298,29 @@ DEBUG tests/list_tests.c:158:
 ----- test_split
 DEBUG tests/list_tests.c:159: 
 ----- test_destroy
-DEBUG tests/darray_tests.c:117: ----- RUNNING: ./tests/darray_tests
-DEBUG tests/darray_tests.c:105: 
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
 ----- test_create
-DEBUG tests/darray_tests.c:106: 
+DEBUG tests/darray_tests.c:169: 
 ----- test_new
-DEBUG tests/darray_tests.c:107: 
+DEBUG tests/darray_tests.c:170: 
 ----- test_set
-DEBUG tests/darray_tests.c:108: 
+DEBUG tests/darray_tests.c:171: 
 ----- test_get
-DEBUG tests/darray_tests.c:109: 
+DEBUG tests/darray_tests.c:172: 
 ----- test_remove
-DEBUG tests/darray_tests.c:110: 
+DEBUG tests/darray_tests.c:173: 
 ----- test_expand_contract
-DEBUG tests/darray_tests.c:111: 
+DEBUG tests/darray_tests.c:174: 
 ----- test_push_pop
-DEBUG tests/darray_tests.c:112: 
+DEBUG tests/darray_tests.c:175: 
 ----- test_destroy
+DEBUG tests/darray_tests.c:181: 
+----- test_create_list
+DEBUG tests/darray_tests.c:182: 
+----- test_push_pop_list
+DEBUG tests/darray_tests.c:183: 
+----- test_destroy_list
 DEBUG tests/list_algos_tests.c:157: ----- RUNNING: ./tests/list_algos_tests
 DEBUG tests/list_algos_tests.c:128: 
 ----- test_bottom_up_merge_sort
@@ -313,23 +349,29 @@ DEBUG tests/list_tests.c:158:
 ----- test_split
 DEBUG tests/list_tests.c:159: 
 ----- test_destroy
-DEBUG tests/darray_tests.c:117: ----- RUNNING: ./tests/darray_tests
-DEBUG tests/darray_tests.c:105: 
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
 ----- test_create
-DEBUG tests/darray_tests.c:106: 
+DEBUG tests/darray_tests.c:169: 
 ----- test_new
-DEBUG tests/darray_tests.c:107: 
+DEBUG tests/darray_tests.c:170: 
 ----- test_set
-DEBUG tests/darray_tests.c:108: 
+DEBUG tests/darray_tests.c:171: 
 ----- test_get
-DEBUG tests/darray_tests.c:109: 
+DEBUG tests/darray_tests.c:172: 
 ----- test_remove
-DEBUG tests/darray_tests.c:110: 
+DEBUG tests/darray_tests.c:173: 
 ----- test_expand_contract
-DEBUG tests/darray_tests.c:111: 
+DEBUG tests/darray_tests.c:174: 
 ----- test_push_pop
-DEBUG tests/darray_tests.c:112: 
+DEBUG tests/darray_tests.c:175: 
 ----- test_destroy
+DEBUG tests/darray_tests.c:181: 
+----- test_create_list
+DEBUG tests/darray_tests.c:182: 
+----- test_push_pop_list
+DEBUG tests/darray_tests.c:183: 
+----- test_destroy_list
 DEBUG tests/list_algos_tests.c:157: ----- RUNNING: ./tests/list_algos_tests
 DEBUG tests/list_algos_tests.c:128: 
 ----- test_bottom_up_merge_sort
@@ -358,203 +400,29 @@ DEBUG tests/list_tests.c:158:
 ----- test_split
 DEBUG tests/list_tests.c:159: 
 ----- test_destroy
-DEBUG tests/darray_tests.c:117: ----- RUNNING: ./tests/darray_tests
-DEBUG tests/darray_tests.c:105: 
+DEBUG tests/darray_tests.c:192: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:168: 
 ----- test_create
-DEBUG tests/darray_tests.c:106: 
+DEBUG tests/darray_tests.c:169: 
 ----- test_new
-DEBUG tests/darray_tests.c:107: 
+DEBUG tests/darray_tests.c:170: 
 ----- test_set
-DEBUG tests/darray_tests.c:108: 
+DEBUG tests/darray_tests.c:171: 
 ----- test_get
-DEBUG tests/darray_tests.c:109: 
+DEBUG tests/darray_tests.c:172: 
 ----- test_remove
-DEBUG tests/darray_tests.c:110: 
+DEBUG tests/darray_tests.c:173: 
 ----- test_expand_contract
-DEBUG tests/darray_tests.c:111: 
+DEBUG tests/darray_tests.c:174: 
 ----- test_push_pop
-DEBUG tests/darray_tests.c:112: 
+DEBUG tests/darray_tests.c:175: 
 ----- test_destroy
-DEBUG tests/list_algos_tests.c:157: ----- RUNNING: ./tests/list_algos_tests
-DEBUG tests/list_algos_tests.c:128: 
------ test_bottom_up_merge_sort
-DEBUG tests/list_algos_tests.c:134: 
------ test_bubble_sort
-DEBUG tests/list_algos_tests.c:140: 
------ test_merge_sort
-DEBUG tests/list_algos_tests.c:146: 
------ test_inserted_sort
-DEBUG tests/list_tests.c:164: ----- RUNNING: ./tests/list_tests
-DEBUG tests/list_tests.c:151: 
------ test_create
-DEBUG tests/list_tests.c:152: 
------ test_push_pop
-DEBUG tests/list_tests.c:153: 
------ test_unshift
-DEBUG tests/list_tests.c:154: 
------ test_remove
-DEBUG tests/list_tests.c:155: 
------ test_shift
-DEBUG tests/list_tests.c:156: 
------ test_copy
-DEBUG tests/list_tests.c:157: 
------ test_join
-DEBUG tests/list_tests.c:158: 
------ test_split
-DEBUG tests/list_tests.c:159: 
------ test_destroy
-DEBUG tests/darray_tests.c:117: ----- RUNNING: ./tests/darray_tests
-DEBUG tests/darray_tests.c:105: 
------ test_create
-DEBUG tests/darray_tests.c:106: 
------ test_new
-DEBUG tests/darray_tests.c:107: 
------ test_set
-DEBUG tests/darray_tests.c:108: 
------ test_get
-DEBUG tests/darray_tests.c:109: 
------ test_remove
-DEBUG tests/darray_tests.c:110: 
------ test_expand_contract
-DEBUG tests/darray_tests.c:111: 
------ test_push_pop
-DEBUG tests/darray_tests.c:112: 
------ test_destroy
-DEBUG tests/list_algos_tests.c:157: ----- RUNNING: ./tests/list_algos_tests
-DEBUG tests/list_algos_tests.c:128: 
------ test_bottom_up_merge_sort
-DEBUG tests/list_algos_tests.c:134: 
------ test_bubble_sort
-DEBUG tests/list_algos_tests.c:140: 
------ test_merge_sort
-DEBUG tests/list_algos_tests.c:146: 
------ test_inserted_sort
-DEBUG tests/list_tests.c:164: ----- RUNNING: ./tests/list_tests
-DEBUG tests/list_tests.c:151: 
------ test_create
-DEBUG tests/list_tests.c:152: 
------ test_push_pop
-DEBUG tests/list_tests.c:153: 
------ test_unshift
-DEBUG tests/list_tests.c:154: 
------ test_remove
-DEBUG tests/list_tests.c:155: 
------ test_shift
-DEBUG tests/list_tests.c:156: 
------ test_copy
-DEBUG tests/list_tests.c:157: 
------ test_join
-DEBUG tests/list_tests.c:158: 
------ test_split
-DEBUG tests/list_tests.c:159: 
------ test_destroy
-DEBUG tests/darray_tests.c:117: ----- RUNNING: ./tests/darray_tests
-DEBUG tests/darray_tests.c:105: 
------ test_create
-DEBUG tests/darray_tests.c:106: 
------ test_new
-DEBUG tests/darray_tests.c:107: 
------ test_set
-DEBUG tests/darray_tests.c:108: 
------ test_get
-DEBUG tests/darray_tests.c:109: 
------ test_remove
-DEBUG tests/darray_tests.c:110: 
------ test_expand_contract
-DEBUG tests/darray_tests.c:111: 
------ test_push_pop
-DEBUG tests/darray_tests.c:112: 
------ test_destroy
-DEBUG tests/list_algos_tests.c:157: ----- RUNNING: ./tests/list_algos_tests
-DEBUG tests/list_algos_tests.c:128: 
------ test_bottom_up_merge_sort
-DEBUG tests/list_algos_tests.c:134: 
------ test_bubble_sort
-DEBUG tests/list_algos_tests.c:140: 
------ test_merge_sort
-DEBUG tests/list_algos_tests.c:146: 
------ test_inserted_sort
-DEBUG tests/list_tests.c:164: ----- RUNNING: ./tests/list_tests
-DEBUG tests/list_tests.c:151: 
------ test_create
-DEBUG tests/list_tests.c:152: 
------ test_push_pop
-DEBUG tests/list_tests.c:153: 
------ test_unshift
-DEBUG tests/list_tests.c:154: 
------ test_remove
-DEBUG tests/list_tests.c:155: 
------ test_shift
-DEBUG tests/list_tests.c:156: 
------ test_copy
-DEBUG tests/list_tests.c:157: 
------ test_join
-DEBUG tests/list_tests.c:158: 
------ test_split
-DEBUG tests/list_tests.c:159: 
------ test_destroy
-DEBUG tests/darray_tests.c:117: ----- RUNNING: ./tests/darray_tests
-DEBUG tests/darray_tests.c:105: 
------ test_create
-DEBUG tests/darray_tests.c:106: 
------ test_new
-DEBUG tests/darray_tests.c:107: 
------ test_set
-DEBUG tests/darray_tests.c:108: 
------ test_get
-DEBUG tests/darray_tests.c:109: 
------ test_remove
-DEBUG tests/darray_tests.c:110: 
------ test_expand_contract
-DEBUG tests/darray_tests.c:111: 
------ test_push_pop
-DEBUG tests/darray_tests.c:112: 
------ test_destroy
-DEBUG tests/list_algos_tests.c:157: ----- RUNNING: ./tests/list_algos_tests
-DEBUG tests/list_algos_tests.c:128: 
------ test_bottom_up_merge_sort
-DEBUG tests/list_algos_tests.c:134: 
------ test_bubble_sort
-DEBUG tests/list_algos_tests.c:140: 
------ test_merge_sort
-DEBUG tests/list_algos_tests.c:146: 
------ test_inserted_sort
-DEBUG tests/list_tests.c:164: ----- RUNNING: ./tests/list_tests
-DEBUG tests/list_tests.c:151: 
------ test_create
-DEBUG tests/list_tests.c:152: 
------ test_push_pop
-DEBUG tests/list_tests.c:153: 
------ test_unshift
-DEBUG tests/list_tests.c:154: 
------ test_remove
-DEBUG tests/list_tests.c:155: 
------ test_shift
-DEBUG tests/list_tests.c:156: 
------ test_copy
-DEBUG tests/list_tests.c:157: 
------ test_join
-DEBUG tests/list_tests.c:158: 
------ test_split
-DEBUG tests/list_tests.c:159: 
------ test_destroy
-DEBUG tests/darray_tests.c:117: ----- RUNNING: ./tests/darray_tests
-DEBUG tests/darray_tests.c:105: 
------ test_create
-DEBUG tests/darray_tests.c:106: 
------ test_new
-DEBUG tests/darray_tests.c:107: 
------ test_set
-DEBUG tests/darray_tests.c:108: 
------ test_get
-DEBUG tests/darray_tests.c:109: 
------ test_remove
-DEBUG tests/darray_tests.c:110: 
------ test_expand_contract
-DEBUG tests/darray_tests.c:111: 
------ test_push_pop
-DEBUG tests/darray_tests.c:112: 
------ test_destroy
+DEBUG tests/darray_tests.c:181: 
+----- test_create_list
+DEBUG tests/darray_tests.c:182: 
+----- test_push_pop_list
+DEBUG tests/darray_tests.c:183: 
+----- test_destroy_list
 DEBUG tests/list_algos_tests.c:157: ----- RUNNING: ./tests/list_algos_tests
 DEBUG tests/list_algos_tests.c:128: 
 ----- test_bottom_up_merge_sort

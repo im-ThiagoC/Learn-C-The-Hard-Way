@@ -1,0 +1,10 @@
+DEBUG tests/darray_algos_tests.c:90: [1;34m----- RUNNING: ./tests/darray_algos_tests[0;0m
+DEBUG tests/darray_algos_tests.c:70: 
+----- test_qsort
+DEBUG tests/darray_algos_tests.c:37: ---Testing qsort sorting algorithm
+[ERROR] (tests/darray_algos_tests.c:43: errno: None in run_sort_test function) Didn't sort it
+DEBUG tests/darray_algos_tests.c:90: [1;34m----- RUNNING: ./tests/darray_algos_tests[0;0m
+DEBUG tests/darray_algos_tests.c:70: 
+----- test_qsort
+DEBUG tests/darray_algos_tests.c:37: ---Testing qsort sorting algorithm
+[ERROR] (tests/darray_algos_tests.c:43: errno: None in run_sort_test function) Didn't sort it
