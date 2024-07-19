@@ -32,6 +32,9 @@
         "clang-diagnostic-incompatible-function-pointer-types",
         "clang-diagnostic-incompatible-function-pointer-types",
         "clang-diagnostic-incompatible-function-pointer-types",
+        "clang-diagnostic-incompatible-function-pointer-types",
+        "clang-diagnostic-incompatible-function-pointer-types",
+        "clang-diagnostic-incompatible-function-pointer-types",
         "clang-diagnostic-incompatible-function-pointer-types"
     ]
 }

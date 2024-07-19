@@ -1,10 +1,138 @@
-DEBUG tests/darray_algos_tests.c:90: [1;34m----- RUNNING: ./tests/darray_algos_tests[0;0m
-DEBUG tests/darray_algos_tests.c:70: 
+DEBUG tests/darray_algos_tests.c:129: [1;34m----- RUNNING: ./tests/darray_algos_tests[0;0m
+DEBUG tests/darray_algos_tests.c:101: 
 ----- test_qsort
 DEBUG tests/darray_algos_tests.c:37: ---Testing qsort sorting algorithm
-[ERROR] (tests/darray_algos_tests.c:43: errno: None in run_sort_test function) Didn't sort it
-DEBUG tests/darray_algos_tests.c:90: [1;34m----- RUNNING: ./tests/darray_algos_tests[0;0m
-DEBUG tests/darray_algos_tests.c:70: 
+DEBUG tests/darray_algos_tests.c:107: 
+----- test_heapsort
+DEBUG tests/darray_algos_tests.c:37: ---Testing heapsort sorting algorithm
+DEBUG tests/darray_algos_tests.c:113: 
+----- test_merge_sort
+DEBUG tests/darray_algos_tests.c:37: ---Testing mergesort sorting algorithm
+DEBUG tests/darray_algos_tests.c:119: 
+----- test_sort_add
+DEBUG tests/darray_algos_tests.c:64: ---Testing Sort_Add with heapSort sorting algorithm
+DEBUG tests/darray_algos_tests.c:124: 
+----- test_find
+DEBUG tests/darray_tests.c:192: [1;34m----- RUNNING: ./tests/darray_tests[0;0m
+DEBUG tests/darray_tests.c:168: 
+----- test_create
+DEBUG tests/darray_tests.c:169: 
+----- test_new
+DEBUG tests/darray_tests.c:170: 
+----- test_set
+DEBUG tests/darray_tests.c:171: 
+----- test_get
+DEBUG tests/darray_tests.c:172: 
+----- test_remove
+DEBUG tests/darray_tests.c:173: 
+----- test_expand_contract
+DEBUG tests/darray_tests.c:174: 
+----- test_push_pop
+DEBUG tests/darray_tests.c:175: 
+----- test_destroy
+DEBUG tests/darray_tests.c:181: 
+----- test_create_list
+DEBUG tests/darray_tests.c:182: 
+----- test_push_pop_list
+DEBUG tests/darray_tests.c:183: 
+----- test_destroy_list
+DEBUG tests/list_algos_tests.c:157: [1;34m----- RUNNING: ./tests/list_algos_tests[0;0m
+DEBUG tests/list_algos_tests.c:128: 
+----- test_bottom_up_merge_sort
+DEBUG tests/list_algos_tests.c:134: 
+----- test_bubble_sort
+DEBUG tests/list_algos_tests.c:140: 
+----- test_merge_sort
+DEBUG tests/list_algos_tests.c:146: 
+----- test_inserted_sort
+DEBUG tests/list_tests.c:164: [1;34m----- RUNNING: ./tests/list_tests[0;0m
+DEBUG tests/list_tests.c:151: 
+----- test_create
+DEBUG tests/list_tests.c:152: 
+----- test_push_pop
+DEBUG tests/list_tests.c:153: 
+----- test_unshift
+DEBUG tests/list_tests.c:154: 
+----- test_remove
+DEBUG tests/list_tests.c:155: 
+----- test_shift
+DEBUG tests/list_tests.c:156: 
+----- test_copy
+DEBUG tests/list_tests.c:157: 
+----- test_join
+DEBUG tests/list_tests.c:158: 
+----- test_split
+DEBUG tests/list_tests.c:159: 
+----- test_destroy
+DEBUG tests/radixmap_tests.c:96: [1;34m----- RUNNING: ./tests/radixmap_tests[0;0m
+DEBUG tests/radixmap_tests.c:91: 
+----- test_operations
+DEBUG tests/darray_algos_tests.c:129: [1;34m----- RUNNING: ./tests/darray_algos_tests[0;0m
+DEBUG tests/darray_algos_tests.c:101: 
 ----- test_qsort
 DEBUG tests/darray_algos_tests.c:37: ---Testing qsort sorting algorithm
-[ERROR] (tests/darray_algos_tests.c:43: errno: None in run_sort_test function) Didn't sort it
+DEBUG tests/darray_algos_tests.c:107: 
+----- test_heapsort
+DEBUG tests/darray_algos_tests.c:37: ---Testing heapsort sorting algorithm
+DEBUG tests/darray_algos_tests.c:113: 
+----- test_merge_sort
+DEBUG tests/darray_algos_tests.c:37: ---Testing mergesort sorting algorithm
+DEBUG tests/darray_algos_tests.c:119: 
+----- test_sort_add
+DEBUG tests/darray_algos_tests.c:64: ---Testing Sort_Add with heapSort sorting algorithm
+DEBUG tests/darray_algos_tests.c:124: 
+----- test_find
+DEBUG tests/darray_tests.c:192: [1;34m----- RUNNING: ./tests/darray_tests[0;0m
+DEBUG tests/darray_tests.c:168: 
+----- test_create
+DEBUG tests/darray_tests.c:169: 
+----- test_new
+DEBUG tests/darray_tests.c:170: 
+----- test_set
+DEBUG tests/darray_tests.c:171: 
+----- test_get
+DEBUG tests/darray_tests.c:172: 
+----- test_remove
+DEBUG tests/darray_tests.c:173: 
+----- test_expand_contract
+DEBUG tests/darray_tests.c:174: 
+----- test_push_pop
+DEBUG tests/darray_tests.c:175: 
+----- test_destroy
+DEBUG tests/darray_tests.c:181: 
+----- test_create_list
+DEBUG tests/darray_tests.c:182: 
+----- test_push_pop_list
+DEBUG tests/darray_tests.c:183: 
+----- test_destroy_list
+DEBUG tests/list_algos_tests.c:157: [1;34m----- RUNNING: ./tests/list_algos_tests[0;0m
+DEBUG tests/list_algos_tests.c:128: 
+----- test_bottom_up_merge_sort
+DEBUG tests/list_algos_tests.c:134: 
+----- test_bubble_sort
+DEBUG tests/list_algos_tests.c:140: 
+----- test_merge_sort
+DEBUG tests/list_algos_tests.c:146: 
+----- test_inserted_sort
+DEBUG tests/list_tests.c:164: [1;34m----- RUNNING: ./tests/list_tests[0;0m
+DEBUG tests/list_tests.c:151: 
+----- test_create
+DEBUG tests/list_tests.c:152: 
+----- test_push_pop
+DEBUG tests/list_tests.c:153: 
+----- test_unshift
+DEBUG tests/list_tests.c:154: 
+----- test_remove
+DEBUG tests/list_tests.c:155: 
+----- test_shift
+DEBUG tests/list_tests.c:156: 
+----- test_copy
+DEBUG tests/list_tests.c:157: 
+----- test_join
+DEBUG tests/list_tests.c:158: 
+----- test_split
+DEBUG tests/list_tests.c:159: 
+----- test_destroy
+DEBUG tests/radixmap_tests.c:96: [1;34m----- RUNNING: ./tests/radixmap_tests[0;0m
+DEBUG tests/radixmap_tests.c:91: 
+----- test_operations

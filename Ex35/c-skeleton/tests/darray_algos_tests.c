@@ -2,8 +2,8 @@
 #include <lcthw/darray_algos.h>
 #include <time.h>
 
-int testcmp(char *a, char *b){
-    return strcmp(a, b);
+int testcmp(char **a, char **b){
+    return strcmp(*a, *b);
 }
 
 DArray *create_words(){
@@ -58,6 +58,37 @@ char *test_merge_sort(){
     return run_sort_test(DArray_mergesort, "mergesort");
 }
 
+char *test_sort_add(){
+    DArray *words = create_words();
+    mu_assert(!is_sorted(words), "Words should start not sorted.");
+    debug("---Testing Sort_Add with heapSort sorting algorithm");
+
+    char *new = "NewElement";
+
+    int rc = DArray_sort_add(words, new, (DArray_compare) testcmp);
+    
+    DArray_print(words);
+
+    mu_assert(rc == 0, "Sort failed");
+    mu_assert(is_sorted(words), "Didn't sort it");
+
+    DArray_destroy(words);
+    return NULL;
+}
+
+char *test_find(){
+    DArray *words = create_words();
+    char *find = "Thiago";
+    int rc = DArray_find(words, find, (DArray_compare) testcmp);
+    mu_assert(rc == 0, "Don't find the word");
+
+    DArray_destroy(words);
+
+    return NULL;
+    error:
+        return NULL;
+}
+
 clock_t start, end;
 double cpu_time_used;
 
@@ -83,6 +114,14 @@ char *all_tests(){
     end = clock();
     cpu_time_used = ((double) (end) - start) / CLOCKS_PER_SEC;
     printf(ANSI_COLOR_GREEN"Tempo do Merge Sort no DArray: %f\n\n"ANSI_COLOR_RESET, cpu_time_used);
+
+    start = clock();
+    mu_run_test(test_sort_add);
+    end = clock();
+    cpu_time_used = ((double) (end) - start) / CLOCKS_PER_SEC;
+    printf(ANSI_COLOR_GREEN"Tempo do Sort_ADD no DArray: %f\n\n"ANSI_COLOR_RESET, cpu_time_used);
+
+    mu_run_test(test_find);
 
     return NULL;
 }
