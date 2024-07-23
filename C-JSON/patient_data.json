@@ -1,0 +1,16 @@
+{
+  "name":"Thiago",
+  "age":13,
+  "condition":"Stable",
+  "float":3.1400000000000001,
+  "birthday":"27-03-2003",
+  "medications":[
+    "Chocolate",
+    "Dipirona",
+    "Loratadina"
+  ],
+  "appointments":[
+    "2024-07-01: General Checkup",
+    "2024-07-15: Follow-up"
+  ]
+}
